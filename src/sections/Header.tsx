@@ -3,20 +3,24 @@
 import { useTranslationClient } from "@/locales/lib/useTranslationClient";
 
 export const Header = () => {
-  const { t, onChangeLang } = useTranslationClient();
+  const { t } = useTranslationClient();
 
   return (
-    <div>
-      <nav>
-        <a href="#">{t("hero.heroTitle")}</a>
-        <a href="#"></a>
-        <a href="#"></a>
-        <a href="#"></a>
+    <div className="flex justify-center w-full z-10 items-center fixed top-3">
+      <nav className="flex gap-1 p-0.5 border bg-white/15 backdrop-blur border-white/15 rounded-full">
+        <a href="#" className="nav-item">
+          {t("header.home")}
+        </a>
+        <a href="#" className="nav-item">
+          {t("header.projects")}
+        </a>
+        <a href="#" className="nav-item">
+          {t("header.about")}
+        </a>
+        <a href="#" className="nav-item bg-white text-gray-900 hover:bg-white/70 hover:text-gray-900">
+          {t("header.contact")}
+        </a>
       </nav>
-      <div>
-        <button className="block" onClick={()=>{onChangeLang('es')}}>es</button>
-        <button onClick={()=>{onChangeLang('en')}}>en</button>
-      </div>
     </div>
   );
 };

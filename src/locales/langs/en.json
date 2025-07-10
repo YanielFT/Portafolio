@@ -1,5 +1,17 @@
 {
-  "hero": {
-    "heroTitle": "Welcome to my portfolio"
+  "header": {
+    "home": "home",
+    "projects": "projects",
+    "about": "about",
+    "contact": "contact"
+  },
+  "section": {
+    "hero": {
+      "status": "Available for new projects",
+      "title": "Building exceptional user expreriences",
+      "description": "I especialize in transforming desings ino functional, high-performing web applications. Let's discuss your next project.",
+      "link_my_work":"Exporle my work",
+      "connect": "Let's connect"
+    }
   }
 }

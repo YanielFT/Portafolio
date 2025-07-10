@@ -1,5 +1,15 @@
 {
-  "hero": {
-    "heroTitle": "Bienvenido a mi portafolio"
+  "header": {
+    "home": "incio",
+    "projects": "poryectos",
+    "about": "sobre mi",
+    "contact": "contacto"
+  },
+  "section": {
+    "hero": {
+      "status": "Disponible para nuevos proyectos",
+      "title": "Creando experiencias de usuario excepcionales",
+      "description": "Me especializo en transformar diseños en aplicaciones web funcionales y de alto rendimiento. Hablemos sobre tu próximo proyecto."
+    }
   }
 }

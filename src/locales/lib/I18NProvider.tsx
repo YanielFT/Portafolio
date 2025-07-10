@@ -19,7 +19,7 @@ export function I18NProvider({ children, lng }: I18NProviderProps) {
     if (languages.includes(toLng)) {
       setLanguage(toLng);
       updateCookieLanguage(toLng);
-      i18n.changeLanguage(toLng); // ✅ y
+      i18n.changeLanguage(toLng);
     }
   };
 
@@ -30,8 +30,6 @@ export function I18NProvider({ children, lng }: I18NProviderProps) {
   const memoValues = useMemo(() => ({ language, changeLanguage }), [language]);
 
   return (
-    <I18NContext.Provider value={memoValues}>
-      <body>{children}</body>
-    </I18NContext.Provider>
+    <I18NContext.Provider value={memoValues}>{children}</I18NContext.Provider>
   );
 }
