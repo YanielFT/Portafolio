@@ -12,15 +12,17 @@
     "@svgr/webpack": "^8.1.0",
     "@tailwindcss/postcss": "^4.1.11",
     "accept-language": "^3.0.20",
+    "clsx": "^2.1.1",
     "date-fns": "^4.1.0",
     "framer-motion": "^11.3.21",
     "i18next-browser-languagedetector": "^8.2.0",
     "i18next-resources-to-backend": "^1.2.1",
+    "motion": "^12.23.3",
     "next": "^14.2.30",
     "next-i18next": "^15.4.2",
     "react": "^18",
     "react-dom": "^18",
-    "tailwind-merge": "^2.4.0"
+    "tailwind-merge": "^2.6.0"
   },
   "devDependencies": {
     "@types/node": "^20",
