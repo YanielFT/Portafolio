@@ -1,13 +1,19 @@
 import { Header } from "@/sections/Header";
-import { HeroSection } from '../sections/Hero';
-import { ProjectsSection } from '../sections/Projects';
+import { HeroSection } from "../sections/Hero";
+import { ProjectsSection } from "../sections/Projects";
+import { TapeSection } from "@/sections/Tape";
+import { TestimonialsSection } from "../sections/Testimonials";
+import { AboutSection } from "@/sections/About";
 
 export default async function Home() {
   return (
-    <div className="h-[80rem]">
+    <div>
       <Header />
       <HeroSection />
       <ProjectsSection />
-      </div>
+      <TapeSection />
+      <TestimonialsSection />
+      <AboutSection />
+    </div>
   );
 }

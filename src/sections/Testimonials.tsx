@@ -3,7 +3,11 @@ import memojiAvatar2 from "@/assets/images/memoji-avatar-2.png";
 import memojiAvatar3 from "@/assets/images/memoji-avatar-3.png";
 import memojiAvatar4 from "@/assets/images/memoji-avatar-4.png";
 import memojiAvatar5 from "@/assets/images/memoji-avatar-5.png";
-
+import { SectionHeader } from "@/components/SectionHeader";
+import { useTranslationServer } from "@/locales/lib/useTranslationServer";
+import Image from "next/image";
+import grainImage from "@/assets/images/grain.jpg";
+import { Card } from "../components/Card";
 const testimonials = [
   {
     name: "Alex Turner",
@@ -37,6 +41,46 @@ const testimonials = [
   },
 ];
 
-export const TestimonialsSection = () => {
-  return <div>Testimonials Section</div>;
+export const TestimonialsSection = async () => {
+  const { t } = await useTranslationServer();
+  return (
+    <section className="container mx-auto mb-16">
+      <SectionHeader
+        title={t("section.testimonial.title")}
+        subtitle={t("section.testimonial.subtitle")}
+        description={t("section.testimonial.description")}
+      />
+      <div className="flex  [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]  overflow-x-clip">
+        <div
+          className="flex flex-none gap-8 py-16 md:py-24
+     "
+        >
+          {testimonials.map((t) => (
+            <Card key={t.name} className="max-w-xs md:max-w-md p-6">
+              <div className="flex gap-4 items-center">
+                <div
+                  className="bg-gray-700
+              inline-flex items-center justify-center
+              rounded-full size-14"
+                >
+                  <Image className="max-h-full" src={t.avatar} alt={t.name} />
+                </div>
+                <div className="flex flex-col items-start justify-center max-w-xs">
+                  <div className="font-semibold font-sans text-xl">
+                    {t.name}
+                  </div>
+                  <div className="text-sm text-white/40 font-sans">
+                    {t.position}
+                  </div>
+                </div>
+              </div>
+              <p className="text-sm md:mt-6 md:text-base mt-4 font-medium font-sans">
+                {t.text}
+              </p>
+            </Card>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 };

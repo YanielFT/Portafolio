@@ -43,10 +43,10 @@ export const HeroSection = async () => {
         className="absolute inset-0 -z-10 opacity-5"
         style={{ backgroundImage: `url(${grainImage.src})` }}
       ></div>
-      <div className="hero-ring size-[620px] "></div>
-      <div className="hero-ring size-[820px]  "></div>
-      <div className="hero-ring size-[1020px] "></div>
-      <div className="hero-ring size-[1220px] "></div>
+      <div className="hero-ring size-[320px] sm:size-[620px] "></div>
+      <div className="hero-ring size-[520px] sm:size-[820px]  "></div>
+      <div className="hero-ring size-[720px] sm:size-[1020px] "></div>
+      <div className="hero-ring size-[820px] sm:size-[1220px] "></div>
       
       <HeroOrbit size={650} rotation={-72}>
         <StarIcon className="size-28 text-emerald-300 " />

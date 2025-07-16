@@ -6,7 +6,7 @@ export const Header = () => {
   const { t } = useTranslationClient();
 
   return (
-    <div className="flex justify-center w-full z-10 items-center fixed top-3">
+    <div className="flex justify-center w-full z-10 items-center fixed top-5">
       <nav className="flex gap-1 p-0.5 border bg-white/15 backdrop-blur border-white/15 rounded-full">
         <a href="#" className="nav-item">
           {t("header.home")}

@@ -5,12 +5,23 @@
     @apply capitalize px-2 sm:px-4 py-1.5 rounded-full text-white/70 text-sm font-semibold hover:bg-white/10 hover:text-white transition duration-300;
   }
   .hero-ring {
-    @apply absolute inset-0 border-2 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border-emerald-300/5 shadow-[0_0_80px_inset] shadow-emerald-300/5;
+    @apply absolute inset-0 border-2 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border-emerald-300/5 shadow-[0_0_80px_inset] shadow-emerald-300/10;
+  }
+
+  h1, span, p {
+    @appy font-sans;
   }
 }
+
+@layer utilities {
+  .container {
+    @apply lg:max-w-5xl;
+  }
+}
+
 .satelite {
   animation: girar 40s linear infinite;
-  animation-fill-mode: both
+  animation-fill-mode: both;
 }
 
 @keyframes girar {
@@ -24,6 +35,6 @@
     transform: translate(20%, 20%) rotate(180deg) translateX(0px);
   }
   100% {
-     transform: translate(-35%, -35%) rotate(270deg) translateX(25px);
+    transform: translate(-35%, -35%) rotate(270deg) translateX(25px);
   }
 }

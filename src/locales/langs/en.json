@@ -10,15 +10,41 @@
       "status": "Available for new projects",
       "title": "Building exceptional user experiences",
       "description": "I especialize in transforming desings into functional, high-performing web applications. Let's discuss your next project.",
-      "link_my_work":"Exporle my work",
+      "link_my_work": "Exporle my work",
       "connect": "Let's connect"
     },
-    "projects":{
-      "title":"Real-World Projects",
-      "second_title":"Featured projects",
-      "description":"I especialize in transforming desings into functional, high-performing web applications. Let's discuss your next project.",
-      "view_project":"Visit Live Site"
+    "projects": {
+      "title": "Real-World Projects",
+      "second_title": "Featured projects",
+      "description": "I especialize in transforming desings into functional, high-performing web applications. Let's discuss your next project.",
+      "view_project": "Visit Live Site"
+    },
+    "tape": {
+      "performant": "Performant",
+      "accessible": "Accessible",
+      "secure": "Secure",
+      "interactive": "Interactive",
+      "Scalable": "Scalable",
+      "frinedly": "User Frindly",
+      "maintainable": "Maintainable",
+      "optimized": "Search Optimized",
+      "usable": "Usable",
+      "reliable": "Reliable",
+      "responsive": "Responsive"
+    },
+    "testimonial": {
+      "title": "Happy Clients",
+      "subtitle": "What Clients Say About Me",
+      "description": "Don't just take my word for it. See what my clients have to say about my work."
+    },
+    "about": {
+      "title": "About me",
+      "subtitle": "A Glimpse Into My World",
+      "description": "Learn more about who I am, What I do, and what inspires me.",
+      "reads": "My reads",
+      "reads_subtitle": "Explore the books shaping my perspectives",
+      "toolbox": "My toolbox",
+      "toolbox_subtitle": "Explore the technologies and tools I use to craft exceptional digital expreriences."
     }
   }
-
 }
