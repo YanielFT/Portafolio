@@ -45,6 +45,16 @@
       "reads_subtitle": "Explore the books shaping my perspectives",
       "toolbox": "My toolbox",
       "toolbox_subtitle": "Explore the technologies and tools I use to craft exceptional digital expreriences."
+    },
+    "close_to_me": {
+      "title": "Beyond the code",
+      "subtitle": "Explore my interests and hobbies beyond the digital realm",
+      "painting": "Painting",
+      "gaming": "Gaming",
+      "hiking": "Hiking",
+      "music": "Hiking",
+      "reading": "Reading",
+      "fitness": "Fitness"
     }
   }
 }

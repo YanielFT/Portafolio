@@ -21,7 +21,7 @@ export const AboutCard: React.FC<SectionHeaderProps> = ({
   return (
     <Card className={twMerge("py-8 px-5", className)}>
       <div>
-        <div className="flex items-center justify-start gap-2">
+        <div className={`flex items-center justify-start gap-2`}>
           {icon}
           <h3 className="font-serif font-normal text-3xl">{title}</h3>
         </div>
