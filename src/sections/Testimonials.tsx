@@ -52,7 +52,7 @@ export const TestimonialsSection = async () => {
       />
       <div className="flex  [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]  overflow-x-clip">
         <div
-          className="flex flex-none gap-8 py-16 md:py-24
+          className="flex flex-none gap-8 py-16 md:py-24 animate-move-left
      "
         >
           {testimonials.map((t) => (

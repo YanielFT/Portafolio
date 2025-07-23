@@ -1,3 +1,4 @@
+import { keyframes } from "motion/react";
 import type { Config } from "tailwindcss";
 
 const config: Config = {
@@ -21,9 +22,9 @@ const config: Config = {
       },
     },
     extend: {
-      fontFamily:{
-        sans:'var(--font-sans)',
-        serif:'var(--font-serif)'
+      fontFamily: {
+        sans: "var(--font-sans)",
+        serif: "var(--font-serif)",
       },
     },
   },

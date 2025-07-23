@@ -53,18 +53,21 @@ export const ProjectsSection = async () => {
   const { t } = await useTranslationServer();
 
   return (
-    <section className="container mx-auto pb-16 px-2 md:px-0">
+    <section className="container mx-auto pb-16 px-5 md:px-0 ">
       <SectionHeader
         title={t("section.projects.title")}
         subtitle={t("section.projects.second_title")}
         description={t("section.projects.description")}
       />
 
-      <div className="flex gap-20 flex-col mt-10 md:mt-20">
-        {portfolioProjects.map((project) => (
+      <div className="flex gap-20 flex-col mt-10 md:mt-20 ">
+        {portfolioProjects.map((project, index) => (
           <Card
+            style={{
+              top: `calc(64px + ${index * 20}px`,
+            }}
             key={project.title}
-            className="px-8 pt-8 md:pt-12 md:px-10 lg:pt-16 lg:px-20"
+            className="px-8 pt-8 sticky md:pt-12 md:px-10 lg:pt-16 lg:px-20"
           >
             <div className="lg:grid lg:grid-cols-2 lg:gap-16">
               <div>
@@ -111,8 +114,7 @@ export const ProjectsSection = async () => {
 
               <div className="relative">
                 <Image
-                  className="h-full mt-8 -mb-4 md:-mb-0 lg:mt-12 lg:absolute lg:h-full lg:w-auto lg:max-w-none
-                  "
+                  className="h-full mt-8 -mb-4 md:-mb-0 lg:mt-12 lg:absolute lg:h-full lg:w-auto lg:max-w-none"
                   src={project.image}
                   alt={project.title}
                 />

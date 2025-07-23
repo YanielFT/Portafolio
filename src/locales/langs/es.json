@@ -1,15 +1,68 @@
 {
   "header": {
-    "home": "incio",
-    "projects": "poryectos",
-    "about": "sobre mi",
-    "contact": "contacto"
+    "home": "Inicio",
+    "projects": "Proyectos",
+    "about": "Sobre mí",
+    "contact": "Contacto"
   },
   "section": {
     "hero": {
       "status": "Disponible para nuevos proyectos",
       "title": "Creando experiencias de usuario excepcionales",
-      "description": "Me especializo en transformar diseños en aplicaciones web funcionales y de alto rendimiento. Hablemos sobre tu próximo proyecto."
+      "description": "Me especializo en transformar diseños en aplicaciones web funcionales y de alto rendimiento. Hablemos sobre tu próximo proyecto.",
+      "link_my_work": "Explora mi trabajo",
+      "connect": "Conectemos"
+    },
+    "projects": {
+      "title": "Proyectos del mundo real",
+      "second_title": "Proyectos destacados",
+      "description": "Me especializo en transformar diseños en aplicaciones web funcionales y de alto rendimiento. Hablemos sobre tu próximo proyecto.",
+      "view_project": "Ver sitio en vivo"
+    },
+    "tape": {
+      "performant": "Eficiente",
+      "accessible": "Accesible",
+      "secure": "Seguro",
+      "interactive": "Interactivo",
+      "Scalable": "Escalable",
+      "frinedly": "Amigable para el usuario",
+      "maintainable": "Mantenible",
+      "optimized": "Optimizado para buscadores",
+      "usable": "Usable",
+      "reliable": "Fiable",
+      "responsive": "Responsivo"
+    },
+    "testimonial": {
+      "title": "Clientes felices",
+      "subtitle": "Lo que dicen mis clientes",
+      "description": "No te quedes solo con mi palabra. Mira lo que mis clientes dicen sobre mi trabajo."
+    },
+    "about": {
+      "title": "Sobre mí",
+      "subtitle": "Una mirada a mi mundo",
+      "description": "Conoce más sobre quién soy, lo que hago y lo que me inspira.",
+      "reads": "Mis lecturas",
+      "reads_subtitle": "Explora los libros que moldean mis perspectivas",
+      "toolbox": "Mi caja de herramientas",
+      "toolbox_subtitle": "Explora las tecnologías y herramientas que uso para crear experiencias digitales excepcionales."
+    },
+    "close_to_me": {
+      "title": "Más allá del código",
+      "subtitle": "Explora mis intereses y hobbies fuera del mundo digital",
+      "painting": "Pintura",
+      "gaming": "Videojuegos",
+      "hiking": "Senderismo",
+      "music": "Música",
+      "reading": "Lectura",
+      "fitness": "Ejercicio"
+    },
+    "contact": {
+      "title": "Creemos algo increíble juntos",
+      "subtitle": "¿Listo para dar vida a tu próximo proyecto? Conectemos y hablemos sobre cómo puedo ayudarte a alcanzar tus metas.",
+      "contact_me": "Contáctame"
     }
+  },
+  "footer": {
+    "rights": "Todos los derechos reservados."
   }
 }

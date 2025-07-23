@@ -31,7 +31,7 @@ export const HeroSection = async () => {
     },
     {
       text: "Yaniel Fuentes",
-      className: "dark:text-emerald-300",
+      className: "text-emerald-300",
     },
   ]
 
@@ -91,7 +91,7 @@ export const HeroSection = async () => {
             alt="Person peeking from behind laptop"
           />
           <div className="flex items-center justify-center  border border-gray-800 rounded-md gap-2 py-2 px-4 bg-gray-950">
-            <div className="bg-green-500 rounded-full h-2 w-2"></div>
+            <div className="bg-green-500 rounded-full h-2 w-2 animate-pulse"></div>
             <small className="text-sm font-semibold">
               {t("section.hero.status")}
             </small>

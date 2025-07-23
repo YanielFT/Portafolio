@@ -5,7 +5,7 @@ export const ContactSection = async () => {
   const { t } = await useTranslationServer();
   return (
     <section>
-      <div className="container pb-16 mx-auto px-5 sm:px-0 overflow-hidden">
+      <div className="container pb-16 mx-auto px-5 sm:px-0 overflow-x-clip">
         <div
           className="relative 
         flex flex-col md:flex-row md:gap-16 md:text-left items-center justify-center

@@ -8,7 +8,9 @@
     @apply absolute inset-0 border-2 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border-emerald-300/5 shadow-[0_0_80px_inset] shadow-emerald-300/10;
   }
 
-  h1, span, p {
+  h1,
+  span,
+  p {
     @appy font-sans;
   }
 }
@@ -17,10 +19,34 @@
   .container {
     @apply lg:max-w-5xl;
   }
+  @keyframes move-left {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .animate-move-left {
+    animation: move-left 30s linear infinite;
+  }
+  @keyframes move-right {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(50%);
+    }
+  }
+
+  .animate-move-right {
+    animation: move-right 30s linear infinite;
+  }
 }
 
 .satelite {
-  animation: girar 40s linear infinite;
+  animation: girar 30s linear infinite;
   animation-fill-mode: both;
 }
 
