@@ -125,11 +125,13 @@ export const AboutSection = async () => {
           description={t("section.about.toolbox_subtitle")}
         >
           <div className="mt-12 w-full [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
-            <ToolboxItem toolboxItems={toolboxItems} className="mt-6 animate-move-left" />
             <ToolboxItem
               toolboxItems={toolboxItems}
-              className=" mt-6"
-              itemWrapperClassName="animate-move-right"
+              className="mt-6 animate-move-right"
+            />
+            <ToolboxItem
+              toolboxItems={toolboxItems}
+              className=" mt-6 animate-move-left"
             />
           </div>
         </AboutCard>
