@@ -52,9 +52,17 @@
       "painting": "Painting",
       "gaming": "Gaming",
       "hiking": "Hiking",
-      "music": "Hiking",
+      "music": "Music",
       "reading": "Reading",
       "fitness": "Fitness"
+    },
+    "contact": {
+      "title": "Let's create something amazin together",
+      "subtitle": "Ready to bring your next project to life? Let's connect and discuss how I can help upu achieve yuor goals.",
+      "contact_me": "Contact me"
     }
+  },
+  "footer": {
+    "rights": "All rights reserved."
   }
 }

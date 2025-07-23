@@ -10,10 +10,17 @@ import ReactIcon from "@/assets/icons/react.svg";
 import ChromeIcon from "@/assets/icons/chrome.svg";
 import GitHubIcon from "@/assets/icons/github.svg";
 import mapImage from "@/assets/images/map.jpg";
-import { TechIcon } from "@/components/TechIcon";
 import SmileMemojicon from "@/assets/images/memoji-smile.png";
 import { ToolboxItem } from "@/components/ToolboxItem";
 import { Card } from "@/components/Card";
+import {
+  Backpack,
+  BookOpen,
+  Brush,
+  Dumbbell,
+  Gamepad2,
+  Music,
+} from "lucide-react";
 
 const toolboxItems = [
   {
@@ -48,35 +55,59 @@ export const AboutSection = async () => {
   const hobbies = [
     {
       title: t("section.close_to_me.painting"),
+      left: "5%",
+      top: "5%",
+      icon: <Brush className="text-gray-950" size={20} />,
     },
     {
       title: t("section.close_to_me.gaming"),
+      left: "50%",
+      top: "5%",
+      icon: <Gamepad2 className="text-gray-950" size={20} />,
     },
     {
       title: t("section.close_to_me.hiking"),
+      left: "10%",
+      top: "30%",
+      icon: <Backpack className="text-gray-950" size={20} />,
     },
     {
       title: t("section.close_to_me.music"),
+      left: "35%",
+      top: "40%",
+      icon: <Music className="text-gray-950" size={20} />,
     },
     {
       title: t("section.close_to_me.reading"),
+      left: "55%",
+      top: "75%",
+      icon: <BookOpen className="text-gray-950" size={20} />,
     },
     {
       title: t("section.close_to_me.fitness"),
+      left: "5%",
+      top: "65%",
+      icon: <Dumbbell className="text-gray-950" size={20} />,
     },
   ];
 
   return (
-    <section className="pb-96 container mx-auto">
+    <section className="pb-32 container mx-auto">
       <SectionHeader
         subtitle={t("section.about.subtitle")}
         title={t("section.about.title")}
         description={t("section.about.description")}
       />
 
-      <div className="flex flex-col gap-12 md:grid md:grid-cols-[repeat(4,1fr)]  lg:grid-cols-[repeat(6,1fr)] md:grid-rows-[23rem,23rem] sm:gap-8">
+      <div
+        className="flex flex-col px-5 sm:px-0 gap-12 md:grid 
+      md:grid-cols-[repeat(4,1fr)]  
+      lg:grid-cols-[repeat(6,1fr)] md:grid-rows-[1fr,1fr]
+       sm:gap-8"
+      >
         <AboutCard
-          className="md:w-full w-[344px] mx-auto pb-0 min-h-[23rem] lg:col-span-2"
+          className="w-full sm:w-[344px] md:w-full mx-auto pb-0 min-h-[23rem] 
+          md:col-span-2"
           title={t("section.about.reads")}
           description={t("section.about.reads_subtitle")}
         >
@@ -89,7 +120,7 @@ export const AboutSection = async () => {
           </div>
         </AboutCard>
         <AboutCard
-          className="w-[344px] mx-auto pb-0 min-h-[23rem] md:col-start-3 md:col-end-5 lg:col-span-4 md:w-full"
+          className="w-full sm:w-[344px] md:w-full  mx-auto pb-0 min-h-[23rem] md:col-span-2 lg:col-span-4"
           title={t("section.about.toolbox")}
           description={t("section.about.toolbox_subtitle")}
         >
@@ -103,39 +134,56 @@ export const AboutSection = async () => {
           </div>
         </AboutCard>
         <AboutCard
-          className="w-[344px] mx-auto pb-0 min-h-[23rem] 
-         md:col-span-2 row-span-1 lg:col-span-4 md:w-full"
+          className="sm:w-[344px] md:w-full mx-auto pb-0 min-h-[23rem] 
+         md:col-span-2 row-span-1 lg:col-span-4  flex flex-col"
           title={t("section.close_to_me.title")}
           description={t("section.about.toolbox_subtitle")}
         >
-          <div className="flex h-full w-full flex-wrap gap-2 mt-8 items-center justify-center">
+          <div className="relative w-full h-full flex-1">
             {hobbies.map((h) => (
               <div
                 key={h.title}
-                className="px-6 bg-gradient-to-r inline-flex from-emerald-300 to-sky-400 rounded-full py-1.5"
+                className={`
+                absolute left-[${h.left}] top-[${h.top}]
+
+                px-6 py-2 bg-gradient-to-r inline-flex from-emerald-300 to-sky-400 rounded-full py-1.5"
+                `}
+                style={{
+                  left: h.left,
+                  top: h.top,
+                }}
               >
-                <span className="text-sm font-medium text-gray-900">
-                  {h.title}
-                </span>
+                <div className="inline-flex gap-2 items-center">
+                  <span className="text-sm font-medium text-gray-900">
+                    {h.title}
+                  </span>
+                  {h.icon}
+                </div>
               </div>
             ))}
           </div>
         </AboutCard>
 
         <Card
-          className=" relative z-0 w-[344px] md:w-full overflow-hidden 
-        flex items-center justify-center mx-auto pb-0 h-[23rem] md:col-span-2  "
+          className=" relative w-full z-0 sm:w-[344px] md:w-full md:col-span-2 overflow-hidden 
+        flex items-center justify-center mx-auto pb-0 h-[23rem]  "
         >
+          <div className="absolute inset-0 z-50 h-full w-full bg-gray-950/65 [mask-image:linear-gradient(to_bottom,transparent_10%,black_80%)]"></div>
+          <span className="absolute text-pretty max-w-50 z-[100] top-70 text-white/90  font-semibold text-lg">
+            Plaza de la Revolución, La Habana
+          </span>
           <Image
-            className="h-full w-full object-cover"
+            className="h-full w-full object-cover grayscale-50"
             src={mapImage}
             alt="Havana map"
           />
+
           <div
-            className="absolute flex items-center justify-center z-10 rounded-full bg-gray-600/35
+            className="absolute  flex items-center justify-center rounded-full bg-gray-600/35
           after:content-[''] after:absolute after:inset-0 after:outline-2 
           after:-outline-offset-2 after:rounded-full
           after:outline-gray-950/30
+          z-[100]
           "
           >
             <Image className="size-25" src={SmileMemojicon} alt={t.name} />
