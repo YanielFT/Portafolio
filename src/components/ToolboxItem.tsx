@@ -22,7 +22,7 @@ export const ToolboxItem = ({
         {toolboxItems.map((t) => (
           <div
             className={twMerge(
-              "p-2 border-2 border-gray-500/15 rounded-xl inline-flex gap-6 items-center",
+              "px-4 py-2  border-2 border-gray-500/15 rounded-xl inline-flex gap-4 items-center",
               itemWrapperClassName
             )}
             key={t.title}

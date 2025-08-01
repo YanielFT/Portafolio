@@ -92,7 +92,7 @@ export const AboutSection = async () => {
   ];
 
   return (
-    <section className="pb-32 container mx-auto">
+    <section id="about" className="pb-32 container mx-auto">
       <SectionHeader
         subtitle={t("section.about.subtitle")}
         title={t("section.about.title")}
@@ -171,7 +171,7 @@ export const AboutSection = async () => {
         flex items-center justify-center mx-auto pb-0 h-[23rem]  "
         >
           <div className="absolute inset-0 z-50 h-full w-full bg-gray-950/65 [mask-image:linear-gradient(to_bottom,transparent_10%,black_80%)]"></div>
-          <span className="absolute text-pretty max-w-50 z-[100] top-70 text-white/90  font-semibold text-lg">
+          <span className="absolute text-pretty max-w-50 z-[100] top-70 text-white/80  font-semibold text-lg">
             Plaza de la Revolución, La Habana
           </span>
           <Image
