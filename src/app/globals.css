@@ -1,6 +1,9 @@
 @import "tailwindcss";
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
   .nav-item {
     @apply capitalize px-2 sm:px-4 py-1.5 rounded-full text-white/70 text-sm font-semibold hover:bg-white/10 hover:text-white transition duration-300;
   }
@@ -21,32 +24,6 @@
 @layer utilities {
   .container {
     @apply lg:max-w-5xl;
-  }
-
-  @keyframes move-left {
-    0% {
-      transform: translateX(0%);
-    }
-    100% {
-      transform: translateX(-50%);
-    }
-  }
-
-  .animate-move-left {
-    animation: move-left 15s linear infinite;
-  }
-
-  @keyframes move-right {
-    0% {
-      transform: translateX(0%);
-    }
-    100% {
-      transform: translateX(50%);
-    }
-  }
-
-  .animate-move-right {
-    animation: move-right 15s linear infinite;
   }
 
   .logos {
@@ -70,21 +47,22 @@
 }
 
 .satelite {
-  animation: girar 30s linear infinite;
-  animation-fill-mode: both;
+  animation: girar 30s linear infinite forwards;
 }
-
 @keyframes girar {
   0% {
-    transform: translate(-50%, -50%) rotate(0deg) translateX(50px);
+    transform: rotate(0deg) translateX(50px);
+  }
+  25% {
+    transform: rotate(90deg) translateX(50px);
   }
   50% {
-    transform: translate(0%, 0%) rotate(120deg) translateX(-25px);
+    transform: rotate(180deg) translateX(50px);
   }
   75% {
-    transform: translate(20%, 20%) rotate(180deg) translateX(0px);
+    transform: rotate(270deg) translateX(50px);
   }
   100% {
-    transform: translate(-35%, -35%) rotate(270deg) translateX(25px);
+    transform: rotate(360deg) translateX(50px);
   }
 }

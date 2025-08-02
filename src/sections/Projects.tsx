@@ -53,7 +53,7 @@ export const ProjectsSection = async () => {
   const { t } = await useTranslationServer();
 
   return (
-    <section className="container mx-auto pb-16 px-5 md:px-0 ">
+    <section id="projects" className="container mx-auto pb-16 px-5 md:px-0 ">
       <SectionHeader
         title={t("section.projects.title")}
         subtitle={t("section.projects.second_title")}
@@ -67,7 +67,7 @@ export const ProjectsSection = async () => {
               top: `calc(64px + ${index * 20}px`,
             }}
             key={project.title}
-            className="px-8 pt-8 sticky md:pt-12 md:px-10 lg:pt-16 lg:px-20"
+            className="px-8 pt-8 sticky md:py-12 md:px-10 lg:px-20"
           >
             <div className="lg:grid lg:grid-cols-2 lg:gap-16">
               <div>

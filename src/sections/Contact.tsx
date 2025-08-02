@@ -4,7 +4,7 @@ import grainImage from "@/assets/images/grain.jpg";
 export const ContactSection = async () => {
   const { t } = await useTranslationServer();
   return (
-    <section>
+    <section id="contact">
       <div className="container pb-16 mx-auto px-5 sm:px-0 overflow-x-clip">
         <div
           className="relative 
