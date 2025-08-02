@@ -86,7 +86,7 @@ export const ProjectsSection = async () => {
                   {project.title}
                 </h3>
                 <hr className="border-rounded-top-2 border-white/5 my-4" />
-                <ul className="flex flex-col gap-4 mt-4">
+                <ul className="flex flex-col mt-4 gap-1">
                   {project.results.map((result) => (
                     <li className="text-left text-white/60" key={result.title}>
                       <span className="inline-flex gap-1 items-center justify-center text-sm">

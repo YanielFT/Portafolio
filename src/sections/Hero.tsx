@@ -37,7 +37,7 @@ export const HeroSection = async () => {
 
 
   return (
-    <section className="relative z-0 py-32 md:py-40 overflow-x-clip overflow-y-hidden">
+    <section id="home" className="relative z-0 py-32 md:py-40 overflow-x-clip overflow-y-hidden">
     <div className="absolute inset-0 -z-10 [mask-image:linear-gradient(to_bottom,transparent,black_0%,black_30%,transparent)]">
       <div
         className="absolute inset-0 -z-10 opacity-5"

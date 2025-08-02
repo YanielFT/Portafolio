@@ -1,21 +1,21 @@
 import { useTranslationServer } from "@/locales/lib/useTranslationServer";
-import { Facebook, Github, Linkedin } from "lucide-react";
+import { Facebook, Github, Instagram, Linkedin } from "lucide-react";
 
 const footerLinks = [
   {
     titile: "Instagram",
     href: "",
-    icon: <Facebook size={20} className="-translate-x-1" />,
+    icon: <Instagram size={16} />,
   },
   {
     titile: "LinkedIn",
     href: "",
-    icon: <Linkedin size={20} />,
+    icon: <Linkedin size={16} />,
   },
   {
     titile: "GitHub",
     href: "",
-    icon: <Github size={20} />,
+    icon: <Github size={16} />,
   },
 ];
 
@@ -34,7 +34,7 @@ export const Footer = async () => {
               <div key={a.titile} className="text-sm py-4">
                 <a
                   href={a.href}
-                  className="flex items-center justify-center gap-2"
+                  className="flex items-center justify-center gap-1"
                 >
                   <span className="">{a.titile}</span>
                   <span>{a.icon}</span>

@@ -4,6 +4,9 @@
   .nav-item {
     @apply capitalize px-2 sm:px-4 py-1.5 rounded-full text-white/70 text-sm font-semibold hover:bg-white/10 hover:text-white transition duration-300;
   }
+  .nav-item-active {
+    @apply bg-white text-gray-900;
+  }
   .hero-ring {
     @apply absolute inset-0 border-2 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border-emerald-300/5 shadow-[0_0_80px_inset] shadow-emerald-300/10;
   }
@@ -19,6 +22,7 @@
   .container {
     @apply lg:max-w-5xl;
   }
+
   @keyframes move-left {
     0% {
       transform: translateX(0%);
@@ -31,6 +35,7 @@
   .animate-move-left {
     animation: move-left 15s linear infinite;
   }
+
   @keyframes move-right {
     0% {
       transform: translateX(0%);
@@ -42,6 +47,25 @@
 
   .animate-move-right {
     animation: move-right 15s linear infinite;
+  }
+
+  .logos {
+    @apply relative overflow-hidden my-8 sm:my-16 flex items-center bg-transparent justify-center flex-row flex-nowrap gap-0;
+  }
+
+  .logos-slide {
+    @apply flex items-center justify-center flex-row flex-nowrap min-w-max;
+    animation: 45s slide infinite linear;
+  }
+
+  /* logos carousel */
+  @keyframes slide {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
   }
 }
 
