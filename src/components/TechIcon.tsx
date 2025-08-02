@@ -1,11 +1,9 @@
 import React from "react";
 
-export const TechIcon = ({ component }: { component: React.ElementType }) => {
-  const Component = component;
-
+export const TechIcon = ({ component }: { component: React.ReactNode }) => {
   return (
     <>
-      <Component className="size-10 fill-[url(#tech-icon-gradient)]" />
+      {component}
       <svg className="size-0 absolute">
         <linearGradient id="tech-icon-gradient">
           <stop offset="0%" stopColor="rgb(110 231 183)" />

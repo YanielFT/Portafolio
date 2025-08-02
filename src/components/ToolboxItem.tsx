@@ -1,24 +1,33 @@
+"use client";
 import React from "react";
 import { TechIcon } from "./TechIcon";
 import { twMerge } from "tailwind-merge";
+import { useScroll, useTransform, motion } from "motion/react";
 
 interface Props {
   toolboxItems: {
     title: string;
-    iconType: React.ElementType;
+    iconType: React.ReactNode;
   }[];
   className?: string;
   itemWrapperClassName?: string;
+  toRight?: boolean;
 }
 
 export const ToolboxItem = ({
   itemWrapperClassName,
   toolboxItems,
   className,
+  toRight,
 }: Props) => {
+  const { scrollYProgress } = useScroll();
+  // Conecta el scroll vertical con movimiento horizontal
+  const right = toRight ? 400 : -600;
+  const x = useTransform(scrollYProgress, [0, 1], [0, right]);
+
   return (
     <div className={twMerge("flex", className)}>
-      <div className="flex flex-none pr-6 py-0.5 gap-6">
+      <motion.div style={{ x }} className="flex flex-none pr-6 py-0.5 gap-6">
         {toolboxItems.map((t) => (
           <div
             className={twMerge(
@@ -31,7 +40,7 @@ export const ToolboxItem = ({
             <span className="font-semibold text-sm">{t.title}</span>
           </div>
         ))}
-      </div>
+      </motion.div>
     </div>
   );
 };

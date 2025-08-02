@@ -25,27 +25,33 @@ import {
 const toolboxItems = [
   {
     title: "JavaScript",
-    iconType: JavascriptIcon,
+    iconType: (
+      <JavascriptIcon className="size-10 fill-[url(#tech-icon-gradient)]" />
+    ),
   },
   {
     title: "HTML",
-    iconType: HTMLIcon,
+    iconType: <HTMLIcon className="size-10 fill-[url(#tech-icon-gradient)]" />,
   },
   {
     title: "CSS3",
-    iconType: CssIcon,
+    iconType: <CssIcon className="size-10 fill-[url(#tech-icon-gradient)]" />,
   },
   {
     title: "React",
-    iconType: ReactIcon,
+    iconType: <ReactIcon className="size-10 fill-[url(#tech-icon-gradient)]" />,
   },
   {
     title: "Chrome",
-    iconType: ChromeIcon,
+    iconType: (
+      <ChromeIcon className="size-10 fill-[url(#tech-icon-gradient)]" />
+    ),
   },
   {
     title: "GitHub",
-    iconType: GitHubIcon,
+    iconType: (
+      <GitHubIcon className="size-10 fill-[url(#tech-icon-gradient)]" />
+    ),
   },
 ];
 
@@ -125,13 +131,11 @@ export const AboutSection = async () => {
           description={t("section.about.toolbox_subtitle")}
         >
           <div className="mt-12 w-full [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
+            <ToolboxItem toolboxItems={toolboxItems} className="mt-6 " />
             <ToolboxItem
               toolboxItems={toolboxItems}
-              className="mt-6 animate-move-right"
-            />
-            <ToolboxItem
-              toolboxItems={toolboxItems}
-              className=" mt-6 animate-move-left"
+              className=" mt-6 -translate-x-[120%] lg:-translate-x-[10%]"
+              toRight
             />
           </div>
         </AboutCard>
