@@ -5,6 +5,7 @@ import { AuthError, AuthResponse } from "@supabase/supabase-js";
 import { createClient } from "@/utils/supabase/server";
 import { handleSupabaseAuthError } from "../utils/api";
 import { UserLogin } from "@/types/auth";
+import { logger } from "@/utils/logger/default-logger";
 
 export async function signInWithPassword(
   data: UserLogin
@@ -15,6 +16,8 @@ export async function signInWithPassword(
     password: data.password,
   });
 
+  logger.debug(res.data.session, "signInWithPassword");
+  
   if (res.error) return handleSupabaseAuthError(res);
   return { data: res, error: false, status: 200 };
 }
