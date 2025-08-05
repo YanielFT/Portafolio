@@ -1,3 +1,4 @@
+"use client";
 import * as React from "react";
 import { useRouter } from "next/navigation";
 import Box from "@mui/material/Box";
@@ -10,7 +11,8 @@ import Typography from "@mui/material/Typography";
 import { useUser } from "@/context/UserContext";
 import { logger } from "@/utils/logger/default-logger";
 import { LogOut } from "lucide-react";
-import { SignOut } from "@/services/auth";
+import { createClient } from "@/utils/supabase/client";
+import { paths } from "@/utils/paths";
 
 export interface UserPopoverProps {
   anchorEl: Element | null;
@@ -23,24 +25,19 @@ export function UserPopover({
   onClose,
   open,
 }: UserPopoverProps): React.JSX.Element {
-  const { checkSession, user } = useUser();
+  const { user } = useUser();
   const router = useRouter();
 
-  const handleSignOut = React.useCallback(async (): Promise<void> => {
-    try {
-      const { error } = await SignOut();
+  const handleLogout = async () => {
+    const supabase = createClient();
+    const { error } = await supabase.auth.signOut({ scope: "local" });
 
-      if (error) {
-        logger.error("Sign out error", error);
-        return;
-      }
-
-      await checkSession?.();
-      router.refresh();
-    } catch (err) {
-      logger.error("Sign out error", err);
+    if (error) {
+      logger.error("Error al cerrar sesión:", error.message);
+    } else {
+      router.push(paths.auth.login);
     }
-  }, [checkSession, router]);
+  };
 
   return (
     <Popover
@@ -63,7 +60,7 @@ export function UserPopover({
         disablePadding
         sx={{ p: "8px", "& .MuiMenuItem-root": { borderRadius: 1 } }}
       >
-        <MenuItem onClick={handleSignOut}>
+        <MenuItem onClick={handleLogout}>
           <ListItemIcon>
             <LogOut fontSize="var(--icon-fontSize-md)" />
           </ListItemIcon>

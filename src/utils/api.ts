@@ -1,4 +1,4 @@
-import { ApiError, ApiResponse } from "@/types/api";
+import { ApiResponse } from "@/types/api";
 import { clearSupabaseSession } from "./sessions";
 import { AuthResponse } from "@supabase/supabase-js";
 import { logger } from "./logger/default-logger";
@@ -6,7 +6,7 @@ import { logger } from "./logger/default-logger";
 export const handleSupabaseAuthError = <T>(
   response: AuthResponse
 ): ApiResponse<T> => {
-  logger.debug(response.error, "handleSupabaseAuthError");
+  logger.debug(response.error?.message, "handleSupabaseAuthError");
   if (response.error?.status === 401) {
     clearSupabaseSession();
     return {

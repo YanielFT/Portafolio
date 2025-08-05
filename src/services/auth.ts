@@ -16,8 +16,6 @@ export async function signInWithPassword(
     password: data.password,
   });
 
-  logger.debug(res.data.session, "signInWithPassword");
-  
   if (res.error) return handleSupabaseAuthError(res);
   return { data: res, error: false, status: 200 };
 }
