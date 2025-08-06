@@ -54,7 +54,9 @@ export default function AvatarMenu() {
     }
   };
 
- 
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   return (
     <>
