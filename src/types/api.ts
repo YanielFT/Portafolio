@@ -1,3 +1,5 @@
+import { PostgrestError } from "@supabase/supabase-js";
+
 export interface CustomApiError {
   title?: string;
   status: number;
@@ -35,4 +37,11 @@ export type CookieData = {
   path: string;
   value: string;
   expires: string;
+};
+
+export type SupabaseInsertResponse = {
+  data: Record<string, any> | null;
+  error: PostgrestError | null;
+  status: number;
+  statusText: string;
 };

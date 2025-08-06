@@ -16,6 +16,9 @@ type UserType = {
   id: string;
   email: string;
   name: string;
+  created_at: string;
+  phone: string;
+  image_id?: string;
   profile: Profile;
 };
 
@@ -84,11 +87,23 @@ export function UserProvider({
       return;
     }
 
+    const { data: imageData, error: imageError } = await supabase
+      .from("imagenes")
+      .select("*")
+      .eq("id", profileData.imagen_id)
+      .maybeSingle();
+
     setUser({
       id: supaUser.id,
       email: supaUser.email ?? "",
-      name: supaUser.user_metadata?.name ?? profileData.full_name ?? "",
-      profile: profileData,
+      created_at: supaUser.created_at ?? "",
+      phone: supaUser.phone ?? "",
+      name: supaUser.user_metadata?.name || profileData.full_name || "",
+      image_id: imageData?.public_id || "",
+      profile: {
+        ...profileData,
+        avatar_url: imageData?.imagen_url || "",
+      },
     });
 
     setError(null);

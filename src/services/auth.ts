@@ -5,12 +5,11 @@ import { AuthError, AuthResponse } from "@supabase/supabase-js";
 import { createClient } from "@/utils/supabase/server";
 import { handleSupabaseAuthError } from "../utils/api";
 import { UserLogin } from "@/types/auth";
-import { logger } from "@/utils/logger/default-logger";
 
+const supabase = createClient();
 export async function signInWithPassword(
   data: UserLogin
 ): Promise<ApiResponse<AuthResponse>> {
-  const supabase = createClient();
   const res = await supabase.auth.signInWithPassword({
     email: data.email,
     password: data.password,
@@ -23,7 +22,6 @@ export async function signInWithPassword(
 export async function signUpWithPassword(
   data: UserLogin
 ): Promise<ApiResponse<AuthResponse>> {
-  const supabase = createClient();
   const res = await supabase.auth.signUp({
     email: data.email,
     password: data.password,
@@ -38,7 +36,6 @@ export async function SignOut(): Promise<
     error: AuthError | null;
   }>
 > {
-  const supabase = createClient();
   const res = await supabase.auth.signOut();
 
   if (res.error)

@@ -37,13 +37,12 @@ export const getSessionUser = cache(async () => {
       logger.error(profileError?.message);
       return;
     }
-    logger.debug("[getSessionUser]: User found", {
-      id: user.id,
-      email: user.email,
-    });
+
     return {
       id: user.id,
       email: user.email!,
+      created_at: user.created_at!,
+      phone: user.phone!,
       name: user.user_metadata?.name || profile?.full_name || "Sin nombre",
       profile,
     };
