@@ -6,7 +6,6 @@ import { UploadFilesResponse } from "@/types/file";
 import { createClient } from "@/utils/supabase/server";
 import { handleSupabaseError } from "@/utils/api";
 
-
 const supabase = createClient();
 
 export async function uploadImage(
@@ -29,7 +28,16 @@ export async function uploadImage(
     const uploadStream = cloudinary.uploader.upload_stream(
       {
         folder: "portafolio",
-        transformation: [{ fetch_format: "webp" }],
+        transformation: [
+          {
+            fetch_format: "webp",
+            crop: "thumb",
+            width: 512,
+            height: 512,
+            gravity: "face",
+            quality: "auto",
+          },
+        ],
       },
       (error, result) => {
         if (error || !result) {
@@ -90,9 +98,19 @@ export async function updateImage(
   return { data: res.data, error: false, status: 200 };
 }
 
+export async function deleteImageInSupabase(
+  id: UploadFilesResponse["id"]
+): Promise<ApiResponse<any>> {
+  const res = await supabase.from("imagenes").delete().eq("public_id", id);
+
+  if (res.error) return handleSupabaseError(res);
+  return { data: res.data, error: false, status: 200 };
+}
+
 export const deleteImageFromCloudinary = async (publicId: string) => {
   try {
     const result = await cloudinary.uploader.destroy(publicId);
+    deleteImageInSupabase(publicId);
     return result;
   } catch (error) {
     console.error("Error eliminando imagen:", error);

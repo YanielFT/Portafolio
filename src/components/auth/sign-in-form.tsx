@@ -22,6 +22,7 @@ import { signInWithPassword } from "@/services/auth";
 import { UserLogin } from "@/types/auth";
 import { logger } from "@/utils/logger/default-logger";
 import { enqueueSnackbar } from "notistack";
+import { useUser } from "@/context/UserContext";
 
 const schema = zod.object({
   email: zod.string().min(1, { message: "Email is required" }).email(),
@@ -37,6 +38,7 @@ const defaultValues = {
 
 export function SignInForm(): React.JSX.Element {
   const router = useRouter();
+  const { checkSession } = useUser();
   const [showPassword, setShowPassword] = React.useState<boolean>();
   const [isPending, setIsPending] = React.useState<boolean>(false);
   const [isLoading, setIsLoading] = React.useState(false);
@@ -58,7 +60,7 @@ export function SignInForm(): React.JSX.Element {
           variant: "error",
         });
       } else if (res?.status === 200) {
-        router.push(paths.home);
+        await checkSession();
       }
       setIsLoading(false);
     } catch (error) {

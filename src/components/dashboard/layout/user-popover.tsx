@@ -49,7 +49,7 @@ export function UserPopover({
     >
       <Box sx={{ p: "16px 20px " }}>
         <Typography variant="subtitle1" sx={{ textTransform: "uppercase" }}>
-          {user?.profile.username}
+          {user?.profile.full_name && user.profile.full_name.split(" ")[0]}
         </Typography>
         <Typography color="text.secondary" variant="body2">
           {user?.email}

@@ -15,6 +15,8 @@ import { styled } from "@mui/material";
 import { deleteImageFromCloudinary, uploadImage } from "@/services/file";
 import { logger } from "@/utils/logger/default-logger";
 import { updateUserImage } from "@/services/users";
+import { MAX_FILE_SIZE } from "@/types/file";
+import { enqueueSnackbar } from "notistack";
 
 export function AccountInfo(): React.JSX.Element {
   const { isLoading: isUserLoading, user, checkSession } = useUser();
@@ -28,6 +30,15 @@ export function AccountInfo(): React.JSX.Element {
       logger.error("Archivo no válido o vacío");
       return;
     }
+
+    if (file.size > MAX_FILE_SIZE) {
+      enqueueSnackbar({
+        message: "Archivo demasiado grande. Máximo permitido: 10 MB.",
+        variant: "error",
+      });
+      return;
+    }
+
     try {
       setIsLoading(true);
       const formData = new FormData();
@@ -91,6 +102,7 @@ export function AccountInfo(): React.JSX.Element {
           <VisuallyHiddenInput
             disabled={isLoading}
             type="file"
+            accept="image/webp,image/jpeg,image/png"
             onChange={handleFileChange}
           />
         </Button>

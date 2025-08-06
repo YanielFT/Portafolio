@@ -23,7 +23,6 @@ export const getSessionUser = cache(async () => {
     }
 
     if (authError || !user) {
-      logger.error(authError?.message);
       return;
     }
 

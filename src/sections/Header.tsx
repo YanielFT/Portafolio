@@ -1,7 +1,8 @@
 "use client";
 import { useTranslationClient } from "@/locales/lib/useTranslationClient";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "motion/react";
+import AvatarMenu from "@/components/landing/AvatarMenu";
 
 type NavItemsType = {
   href: string;
@@ -44,7 +45,11 @@ export const Header = () => {
   }, []);
 
   return (
-    <div className="flex justify-center w-full z-10 items-center fixed top-5">
+    <div
+      className="
+    flex justify-center items-center 
+    gap-4 w-full z-10  fixed top-5"
+    >
       <motion.nav className="flex gap-1 p-0.5 border bg-white/15 backdrop-blur border-white/15 rounded-full">
         {NAV_ITEMS.map((n) => (
           <motion.a
@@ -58,7 +63,7 @@ export const Header = () => {
             {isSelected(n) && (
               <motion.div
                 layoutId="pill"
-                className="absolute inset-0 bg-white text-gray-900 rounded-full -z-10"
+                className="absolute inset-0 bg-white text-gray-900 rounded-full -z-10 "
                 transition={{
                   type: "spring",
                   stiffness: 500,
@@ -71,6 +76,7 @@ export const Header = () => {
           </motion.a>
         ))}
       </motion.nav>
+      <AvatarMenu />
     </div>
   );
 };

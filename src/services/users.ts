@@ -1,5 +1,6 @@
 "use server";
 import { ApiResponse } from "@/types/api";
+import { Profile, ProfileUpdate } from "@/types/auth";
 import { handleSupabaseError } from "@/utils/api";
 import { logger } from "@/utils/logger/default-logger";
 import { createClient } from "@/utils/supabase/server";
@@ -14,6 +15,16 @@ export async function updateUserImage(
     .update({ imagen_id: imagenId })
     .eq("id", userId);
   logger.debug("updateUserImage:", res);
+
+  if (res.error) return handleSupabaseError(res);
+  return { data: res.data, error: false, status: 200 };
+}
+
+export async function updateUserDetails(
+  user: ProfileUpdate,
+  id: string
+): Promise<ApiResponse<any>> {
+  const res = await supabase.from("profiles").update(user).eq("id", id);
 
   if (res.error) return handleSupabaseError(res);
   return { data: res.data, error: false, status: 200 };

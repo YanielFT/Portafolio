@@ -4,7 +4,6 @@ import * as React from "react";
 import RouterLink from "next/link";
 import { usePathname } from "next/navigation";
 import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
 import Divider from "@mui/material/Divider";
 import Drawer from "@mui/material/Drawer";
 import Stack from "@mui/material/Stack";
@@ -16,8 +15,8 @@ import { navItems } from "./config";
 import { navIcons } from "./nav-icons";
 import { paths } from "@/utils/paths";
 import { Logo } from "@/components/ui/Logo";
-import { ArrowUpDown, ExternalLink } from "lucide-react";
 import { isNavItemActive } from "./is-nav-item-active";
+import { useUser } from "@/context/UserContext";
 
 export interface MobileNavProps {
   onClose?: () => void;
@@ -30,6 +29,12 @@ export function MobileNav({
   onClose,
 }: MobileNavProps): React.JSX.Element {
   const pathname = usePathname();
+  const { user } = useUser();
+  const filteredNavItems = navItems.filter((item) => {
+    const allowedRoles = item.roles ?? []; // Si no se define, nadie lo ve
+    const userRole = user?.profile.role;
+    return userRole && allowedRoles.includes(userRole);
+  });
 
   return (
     <Drawer
@@ -60,7 +65,7 @@ export function MobileNav({
       onClose={onClose}
       open={open}
     >
-      <Stack spacing={2} sx={{ p: 3 }}>
+      <Stack spacing={2} sx={{ p: 2 }}>
         <Box
           component={RouterLink}
           href={paths.home}
@@ -71,7 +76,7 @@ export function MobileNav({
       </Stack>
       <Divider sx={{ borderColor: "var(--mui-palette-neutral-700)" }} />
       <Box component="nav" sx={{ flex: "1 1 auto", p: "12px" }}>
-        {renderNavItems({ pathname, items: navItems })}
+        {renderNavItems({ pathname, items: filteredNavItems })}
       </Box>
     </Drawer>
   );

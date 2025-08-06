@@ -9,12 +9,10 @@ import { useUser } from "@/context/UserContext";
 
 export interface AuthGuardProps {
   children: React.ReactNode;
-  requiredRole: string;
 }
 
 export function AuthGuard({
   children,
-  requiredRole,
 }: AuthGuardProps): React.JSX.Element | null {
   const router = useRouter();
   const { user, error, isLoading } = useUser();
@@ -37,15 +35,6 @@ export function AuthGuard({
       router.replace(paths.auth.login);
       return;
     }
-
-    if (user.profile?.role !== requiredRole) {
-      logger.debug(
-        `[AuthGuard]: Usuario no tiene el rol requerido (${requiredRole}), redirigiendo`
-      );
-      router.replace(paths.auth.login);
-      return;
-    }
-
     setIsChecking(false);
   };
 

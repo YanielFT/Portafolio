@@ -26,6 +26,7 @@ type UserContextType = {
   user: UserType | null;
   isLoading: boolean;
   error: string | null;
+  isAdmin: boolean;
   checkSession: () => Promise<void>;
 };
 
@@ -48,10 +49,11 @@ export function UserProvider({
   initialUser = null,
   children,
 }: UserProviderProps) {
+  const supabase = createClient();
   const [user, setUser] = useState<UserType | null>(initialUser);
   const [isLoading, setIsLoading] = useState(!initialUser);
   const [error, setError] = useState<string | null>(null);
-  const supabase = createClient();
+  const isAdmin = user?.profile.role === "admin";
 
   const checkSession = useCallback(async () => {
     setIsLoading(true);
@@ -128,7 +130,9 @@ export function UserProvider({
   }, [checkSession]);
 
   return (
-    <UserContext.Provider value={{ user, isLoading, error, checkSession }}>
+    <UserContext.Provider
+      value={{ user, isLoading, error, checkSession, isAdmin }}
+    >
       {children}
     </UserContext.Provider>
   );

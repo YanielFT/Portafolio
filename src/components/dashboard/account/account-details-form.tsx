@@ -10,13 +10,12 @@ import Divider from "@mui/material/Divider";
 import { Grid, MenuItem } from "@mui/material";
 import RHFTextField from "@/components/hook-form/rhf-text-field";
 import { RHFSelect } from "@/components/hook-form/rhf-select";
-
-const ROLE = {
-  admin: "admin",
-  user: "user",
+import { useUser } from "@/context/UserContext";
+type Props = {
+  isLoading: boolean;
 };
-
-export function AccountDetailsForm(): React.JSX.Element {
+export function AccountDetailsForm({ isLoading }: Props): React.JSX.Element {
+  const { isAdmin } = useUser();
   return (
     <Card>
       <CardHeader subheader="The information can be edited" title="Profile" />
@@ -32,22 +31,26 @@ export function AccountDetailsForm(): React.JSX.Element {
               type="text"
             />
           </Grid>
-          <Grid size={{ md: 6, xs: 12 }}>
-            <RHFSelect
-              name="role"
-              label="Role"
-              placeholder="Seleccionar role..."
-              type="text"
-            >
-              <MenuItem value="admin">Admin</MenuItem>
-              <MenuItem value="user">user</MenuItem>
-            </RHFSelect>
-          </Grid>
+          {isAdmin && (
+            <Grid size={{ md: 6, xs: 12 }}>
+              <RHFSelect
+                name="role"
+                label="Role"
+                placeholder="Seleccionar role..."
+                type="text"
+              >
+                <MenuItem value="admin">Admin</MenuItem>
+                <MenuItem value="user">user</MenuItem>
+              </RHFSelect>
+            </Grid>
+          )}
         </Grid>
       </CardContent>
       <Divider />
       <CardActions sx={{ justifyContent: "flex-end" }}>
-        <Button variant="contained">Guardar</Button>
+        <Button loading={isLoading} type="submit" variant="contained">
+          Guardar
+        </Button>
       </CardActions>
     </Card>
   );

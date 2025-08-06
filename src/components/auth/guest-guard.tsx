@@ -17,7 +17,6 @@ export function GuestGuard({
   const router = useRouter();
   const { user, error, isLoading } = useUser();
   const [isChecking, setIsChecking] = useState<boolean>(true);
-
   const checkPermissions = async (): Promise<void> => {
     setIsChecking(true);
     if (isLoading) return;

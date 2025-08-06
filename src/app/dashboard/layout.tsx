@@ -20,7 +20,7 @@ interface LayoutProps {
 
 export default async function Layout({ children }: LayoutProps) {
   return (
-    <AuthGuard requiredRole="admin">
+    <AuthGuard>
       <ThemeProvider>
         <GlobalStyles
           styles={{
@@ -54,7 +54,7 @@ export default async function Layout({ children }: LayoutProps) {
           >
             <MainNav />
             <main>
-              <Container maxWidth="xl" sx={{ py: "64px" }}>
+              <Container maxWidth="xl" sx={{ py: "1rem" }}>
                 {children}
               </Container>
             </main>

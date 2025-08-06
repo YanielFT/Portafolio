@@ -14,9 +14,17 @@ import { paths } from "@/utils/paths";
 import { Logo } from "@/components/ui/Logo";
 import { NavItemConfig } from "@/types/nav";
 import { isNavItemActive } from "./is-nav-item-active";
+import { useUser } from "@/context/UserContext";
 
 export function SideNav(): React.JSX.Element {
   const pathname = usePathname();
+  const { user } = useUser();
+
+  const filteredNavItems = navItems.filter((item) => {
+    const allowedRoles = item.roles ?? []; // Si no se define, nadie lo ve
+    const userRole = user?.profile.role;
+    return userRole && allowedRoles.includes(userRole);
+  });
 
   return (
     <Box
@@ -47,7 +55,7 @@ export function SideNav(): React.JSX.Element {
         "&::-webkit-scrollbar": { display: "none" },
       }}
     >
-      <Stack spacing={2} sx={{ p: 3 }}>
+      <Stack spacing={2} sx={{ p: 2 }}>
         <Box
           component={RouterLink}
           href={paths.home}
@@ -58,7 +66,7 @@ export function SideNav(): React.JSX.Element {
       </Stack>
       <Divider sx={{ borderColor: "var(--mui-palette-neutral-700)" }} />
       <Box component="nav" sx={{ flex: "1 1 auto", p: "12px" }}>
-        {renderNavItems({ pathname, items: navItems })}
+        {renderNavItems({ pathname, items: filteredNavItems })}
       </Box>
       <Divider sx={{ borderColor: "var(--mui-palette-neutral-700)" }} />
     </Box>
