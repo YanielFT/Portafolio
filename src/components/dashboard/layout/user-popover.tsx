@@ -10,7 +10,7 @@ import Popover from "@mui/material/Popover";
 import Typography from "@mui/material/Typography";
 import { useUser } from "@/context/UserContext";
 import { logger } from "@/utils/logger/default-logger";
-import { LogOut } from "lucide-react";
+import { Link, LogOut } from "lucide-react";
 import { createClient } from "@/utils/supabase/client";
 import { paths } from "@/utils/paths";
 
@@ -60,6 +60,12 @@ export function UserPopover({
         disablePadding
         sx={{ p: "8px", "& .MuiMenuItem-root": { borderRadius: 1 } }}
       >
+        <MenuItem onClick={() => router.push(paths.home)}>
+          <ListItemIcon>
+            <Link fontSize="var(--icon-fontSize-md)" />
+          </ListItemIcon>
+          Portafolio
+        </MenuItem>
         <MenuItem onClick={handleLogout}>
           <ListItemIcon>
             <LogOut fontSize="var(--icon-fontSize-md)" />

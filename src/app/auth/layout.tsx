@@ -6,9 +6,9 @@ import { ThemeProvider } from "@/utils/theme-provider/theme-provider";
 import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
-import RouterLink from "next/link";
-import { paths } from "@/utils/paths";
 import { GuestGuard } from "@/components/auth/guest-guard";
+import { ArrowLeftIcon } from "lucide-react";
+import BackButton from "@/components/ui/BackButton";
 
 export const viewport = {
   width: "device-width",
@@ -33,15 +33,7 @@ export default async function Layout({ children }: LayoutProps) {
         <Box
           sx={{ display: "flex", flex: "1 1 auto", flexDirection: "column" }}
         >
-          <Box sx={{ p: 3 }}>
-            <Box
-              component={RouterLink}
-              href={paths.home}
-              sx={{ display: "inline-block", fontSize: 0 }}
-            >
-              {/* Logo */}
-            </Box>
-          </Box>
+          <BackButton />
           <Box
             sx={{
               alignItems: "center",
