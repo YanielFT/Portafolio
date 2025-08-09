@@ -1,51 +1,56 @@
-import darkSaasLandingPage from "@/assets/images/dark-saas-landing-page.png";
-import lightSaasLandingPage from "@/assets/images/light-saas-landing-page.png";
-import aiStartupLandingPage from "@/assets/images/ai-startup-landing-page.png";
+import palcoPage from "@/assets/images/placo.webp";
+import palcoMobilePage from "@/assets/images/palco-mobile.webp";
+import smabrainPage from "@/assets/images/smabrain.webp";
+import smabrainMobilePage from "@/assets/images/smabrain-mobile.webp";
+import tecoMobilePage from "@/assets/images/teco-mobile.webp";
+import tecoPage from "@/assets/images/teco.webp";
 import { useTranslationServer } from "@/locales/lib/useTranslationServer";
 import Image from "next/image";
 import Link from "next/link";
 import CheckIcon from "@/assets/icons/check-circle.svg";
 import ArrowIcon from "@/assets/icons/arrow-up-right.svg";
-import grainImage from "@/assets/images/grain.jpg";
 import { SectionHeader } from "@/components/SectionHeader";
 import { Card } from "@/components/Card";
 
 const portfolioProjects = [
   {
-    company: "Acme Corp",
-    year: "2022",
-    title: "Dark Saas Landing Page",
+    company: "Palco Group",
+    year: "2024",
+    title: "Palco Landing Page",
     results: [
       { title: "Enhanced user experience by 40%" },
       { title: "Improved site speed by 50%" },
       { title: "Increased mobile traffic by 35%" },
     ],
-    link: "https://youtu.be/4k7IdSLxh6w",
-    image: darkSaasLandingPage,
+    link: "https://palco-develop.vercel.app/",
+    image: palcoPage,
+    imageMobile: palcoMobilePage,
   },
   {
-    company: "Innovative Co",
-    year: "2021",
-    title: "Light Saas Landing Page",
+    company: "SmartBit",
+    year: "2024",
+    title: "SmartBit Landing Page",
     results: [
       { title: "Boosted sales by 20%" },
       { title: "Expanded customer reach by 35%" },
       { title: "Increased brand awareness by 15%" },
     ],
-    link: "https://youtu.be/7hi5zwO75yc",
-    image: lightSaasLandingPage,
+    link: "http://smabrain.vercel.app/",
+    image: smabrainPage,
+    imageMobile: smabrainMobilePage,
   },
   {
-    company: "Quantum Dynamics",
-    year: "2023",
-    title: "AI Startup Landing Page",
+    company: "TecoPo",
+    year: "2025",
+    title: "Teco store",
     results: [
       { title: "Enhanced user experience by 40%" },
       { title: "Improved site speed by 50%" },
       { title: "Increased mobile traffic by 35%" },
     ],
-    link: "https://youtu.be/Z7I5uSRHMHg",
-    image: aiStartupLandingPage,
+    link: "https://teco-test.vercel.app/",
+    image: tecoPage,
+    imageMobile: tecoMobilePage,
   },
 ];
 
@@ -95,7 +100,12 @@ export const ProjectsSection = async () => {
                     </li>
                   ))}
                 </ul>
-                <Link href={project.link} className="mt-5">
+                <Link
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href={project.link}
+                  className="mt-5"
+                >
                   <button
                     className="
             rounded-xl 
@@ -112,11 +122,28 @@ export const ProjectsSection = async () => {
                 </Link>
               </div>
 
-              <div className="relative">
+              <div className="relative lg:translate-0">
                 <Image
-                  className="h-full mt-8 -mb-4 md:-mb-0 lg:mt-12 lg:absolute lg:h-full lg:w-auto lg:max-w-none"
+                  className="h-full  
+                  -mr-20
+                  -mb-4 md:-mb-12 md:mr-0
+                  w-auto max-w-screen 
+                  lg:mt-12 lg:absolute lg:h-full 
+                  lg:max-w-none lg:-right-30
+                  object-cover"
                   src={project.image}
                   alt={project.title}
+                />
+                <Image
+                  className="
+                  max-h-60 max-w-30
+                  md:max-h-80 md:max-w-50 w-full h-full z-10
+                  left-0 bottom-0
+                  lg:-left-30 lg:-bottom-14
+                  lg:mt-12 absolute 
+                  object-cover object-center"
+                  src={project.imageMobile}
+                  alt={`${project.title} mobile version`}
                 />
               </div>
             </div>

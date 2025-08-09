@@ -26,7 +26,7 @@ export const Footer = async () => {
       <div
         className="
       overflow-x-clip sm:justify-between 
-      relative -z-10 flex-col gap-8 sm:flex-row flex items-center justify-center mx-auto"
+      relative z-10 flex-col gap-8 sm:flex-row flex items-center justify-center mx-auto"
       >
         <div className="max-w-5xl mx-auto flex items-center flex-col sm:flex-row sm:justify-between w-full  border-t py-10 sm:py-6 border-t-white/15">
           <nav className="flex flex-col sm:flex-row sm:gap-10  sm:order-2">
@@ -36,7 +36,6 @@ export const Footer = async () => {
                   href={a.href}
                   className="flex items-center justify-center gap-1"
                 >
-                  <span className="">{a.titile}</span>
                   <span>{a.icon}</span>
                 </a>
               </div>

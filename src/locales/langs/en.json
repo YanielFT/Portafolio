@@ -48,13 +48,8 @@
     },
     "close_to_me": {
       "title": "Beyond the code",
-      "subtitle": "Explore my interests and hobbies beyond the digital realm",
-      "painting": "Painting",
-      "gaming": "Gaming",
-      "hiking": "Hiking",
-      "music": "Music",
-      "reading": "Reading",
-      "fitness": "Fitness"
+      "subtitle": "Explore my story",
+      "content": "Frontend Developer especializado en React JS y Next.js, con enfoque en interfaces escalables, animaciones interactivas y arquitectura modular. Experiencia fullstack con Java (Spring Boot) y CMS headless, liderando proyectos con rendimiento, accesibilidad y automatización CI/CD."
     },
     "contact": {
       "title": "Let's create something amazin together",

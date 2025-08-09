@@ -31,12 +31,16 @@
   }
 
   .logos {
-    @apply relative overflow-hidden my-8 sm:my-16 flex items-center bg-transparent justify-center flex-row flex-nowrap gap-0;
+    @apply relative overflow-hidden flex items-center bg-transparent justify-center flex-row flex-nowrap gap-0;
   }
 
   .logos-slide {
     @apply flex items-center justify-center flex-row flex-nowrap min-w-max;
     animation: 45s slide infinite linear;
+  }
+  .logos-slide-right {
+    @apply flex items-center justify-center flex-row flex-nowrap min-w-max;
+    animation: 45s slidetoRight infinite linear;
   }
 
   /* logos carousel */
@@ -46,6 +50,15 @@
     }
     to {
       transform: translateX(-100%);
+    }
+  }
+
+  @keyframes slidetoRight {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(100%);
     }
   }
 }

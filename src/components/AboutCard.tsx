@@ -13,6 +13,7 @@ interface SectionHeaderProps {
   children: ReactNode;
   moveInX?: number;
   moveInY?: number;
+  padding?: string;
 }
 
 export const AboutCard: React.FC<SectionHeaderProps> = ({
@@ -23,12 +24,13 @@ export const AboutCard: React.FC<SectionHeaderProps> = ({
   icon = <StartIcon className="size-9 text-emerald-300" />,
   moveInX = 0,
   moveInY = 0,
+  padding,
 }) => {
   return (
     <motion.div
       initial={{ x: moveInX, y: moveInY }}
       whileInView={{ x: 0, y: 0 }}
-      viewport={{  once: true }}
+      viewport={{ once: true }}
       className={className}
     >
       <Card className={twMerge("py-8 px-5", className)}>
@@ -39,7 +41,7 @@ export const AboutCard: React.FC<SectionHeaderProps> = ({
           </div>
           <p className="text-sm text-white/60 mt-2">{description}</p>
         </div>
-        {children}
+        <div className="relative">{children}</div>
       </Card>
     </motion.div>
   );

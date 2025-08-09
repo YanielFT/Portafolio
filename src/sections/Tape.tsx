@@ -2,6 +2,7 @@
 import StartIcon from "@/assets/icons/star.svg";
 import { useEffect } from "react";
 import { useTranslationClient } from "@/locales/lib/useTranslationClient";
+
 const words = [
   "performant",
   "accessible",
