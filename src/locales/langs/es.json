@@ -1,9 +1,13 @@
 {
   "header": {
-    "home": "Inicio",
-    "projects": "Proyectos",
-    "about": "Sobre mí",
-    "contact": "Contacto"
+    "home": "inicio",
+    "projects": "proyectos",
+    "about": "sobre mí",
+    "contact": "contacto",
+    "build": "Desarrollar",
+    "awasome": "Geniales",
+    "apps": "Apps",
+    "with": "Con"
   },
   "section": {
     "hero": {
@@ -17,10 +21,10 @@
       "title": "Proyectos del mundo real",
       "second_title": "Proyectos destacados",
       "description": "Me especializo en transformar diseños en aplicaciones web funcionales y de alto rendimiento. Hablemos sobre tu próximo proyecto.",
-      "view_project": "Ver sitio en vivo"
+      "view_project": "Visitar sitio en vivo"
     },
     "tape": {
-      "performant": "Eficiente",
+      "performant": "Rendimiento",
       "accessible": "Accesible",
       "secure": "Seguro",
       "interactive": "Interactivo",
@@ -29,36 +33,31 @@
       "maintainable": "Mantenible",
       "optimized": "Optimizado para buscadores",
       "usable": "Usable",
-      "reliable": "Fiable",
+      "reliable": "Confiable",
       "responsive": "Responsivo"
     },
     "testimonial": {
       "title": "Clientes felices",
-      "subtitle": "Lo que dicen mis clientes",
-      "description": "No te quedes solo con mi palabra. Mira lo que mis clientes dicen sobre mi trabajo."
+      "subtitle": "Lo que dicen los clientes sobre mí",
+      "description": "No te quedes solo con mi palabra. Mira lo que mis clientes opinan sobre mi trabajo."
     },
     "about": {
       "title": "Sobre mí",
       "subtitle": "Una mirada a mi mundo",
-      "description": "Conoce más sobre quién soy, lo que hago y lo que me inspira.",
+      "description": "Conoce más sobre quién soy, qué hago y qué me inspira.",
       "reads": "Mis lecturas",
-      "reads_subtitle": "Explora los libros que moldean mis perspectivas",
+      "reads_subtitle": "Explora los libros que moldean mi perspectiva",
       "toolbox": "Mi caja de herramientas",
       "toolbox_subtitle": "Explora las tecnologías y herramientas que uso para crear experiencias digitales excepcionales."
     },
     "close_to_me": {
       "title": "Más allá del código",
-      "subtitle": "Explora mis intereses y hobbies fuera del mundo digital",
-      "painting": "Pintura",
-      "gaming": "Videojuegos",
-      "hiking": "Senderismo",
-      "music": "Música",
-      "reading": "Lectura",
-      "fitness": "Ejercicio"
+      "subtitle": "Explora mi historia",
+      "content": "Desarrollador Frontend especializado en React JS y Next.js, enfocado en interfaces escalables, animaciones interactivas y arquitectura modular. Experiencia fullstack con Java (Spring Boot) y CMS headless, liderando proyectos con rendimiento, accesibilidad y automatización CI/CD."
     },
     "contact": {
       "title": "Creemos algo increíble juntos",
-      "subtitle": "¿Listo para dar vida a tu próximo proyecto? Conectemos y hablemos sobre cómo puedo ayudarte a alcanzar tus metas.",
+      "subtitle": "¿Listo para dar vida a tu próximo proyecto? Conectemos y hablemos sobre cómo puedo ayudarte a alcanzar tus objetivos.",
       "contact_me": "Contáctame"
     }
   },

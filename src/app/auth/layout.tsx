@@ -7,7 +7,6 @@ import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import { GuestGuard } from "@/components/auth/guest-guard";
-import { ArrowLeftIcon } from "lucide-react";
 import BackButton from "@/components/ui/BackButton";
 
 export const viewport = {
@@ -70,15 +69,15 @@ export default async function Layout({ children }: LayoutProps) {
                 }}
                 variant="h1"
               >
-                Bienvenido a{" "}
+                Bienvenido a la adminsitración de{" "}
                 <Box component="span" sx={{ color: "#15b79e" }}>
-                  Turbo
+                  YanielFT
                 </Box>
               </Typography>
-              <Typography align="center" variant="subtitle1">
+              {/* <Typography align="center" variant="subtitle1">
                 Una web profesional para descubrir nuevos lugares y compartir
                 tus experiencias.
-              </Typography>
+              </Typography> */}
             </Stack>
             <Box sx={{ display: "flex", justifyContent: "center" }}>
               <Box

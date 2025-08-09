@@ -3,11 +3,6 @@ import { Facebook, Github, Instagram, Linkedin } from "lucide-react";
 
 const footerLinks = [
   {
-    titile: "Instagram",
-    href: "",
-    icon: <Instagram size={16} />,
-  },
-  {
     titile: "LinkedIn",
     href: "",
     icon: <Linkedin size={16} />,

@@ -35,7 +35,7 @@ export const AboutSection = async () => {
           description={t("section.close_to_me.subtitle")}
         >
           <div className="mt-4 flex items-center justify-center h-full w-full">
-            <p className="text-lg sm:text-base text-balance text-white/60">
+            <p className="text-sm sm:text-base text-balance text-white/60">
               {t("section.close_to_me.content")}
             </p>
           </div>

@@ -10,17 +10,17 @@ const data: DataSet[] = [
   {
     label: "Team A",
     color: "oklch(0.696 0.17 162.48)",
-    values: [90, 60, 80, 100, 100, 95],
+    values: [90, 60, 80, 60, 50, 65],
   },
 ];
 
 const axes: string[] = [
   "Frontend",
   "Backend",
-  "Diseño UX/UI",
-  "Comunicación",
-  "Aprendizaje continuo",
-  "Colaboración",
+  "UX/UI",
+  "Tester",
+  "Cloud",
+  "IA",
 ];
 const maxValue = 100;
 const angleStep = (Math.PI * 2) / axes.length;

@@ -56,14 +56,14 @@ export const Header = () => {
             key={n.label}
             href={n.href}
             layout
-            className={`relative nav-item hover:bg-white/70 hover:text-gray-900 ${
+            className={`relative nav-item  hover:bg-white/70 hover:text-gray-900 ${
               isSelected(n) ? "text-gray-900" : "text-white"
             }`}
           >
             {isSelected(n) && (
               <motion.div
                 layoutId="pill"
-                className="absolute inset-0 bg-white text-gray-900 rounded-full -z-10 "
+                className="absolute  inset-0 bg-white text-gray-900 rounded-full -z-10 "
                 transition={{
                   type: "spring",
                   stiffness: 500,

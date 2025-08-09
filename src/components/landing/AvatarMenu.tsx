@@ -4,11 +4,18 @@ import { createPortal } from "react-dom";
 import Image from "next/image";
 import Link from "next/link";
 import { useUser } from "@/context/UserContext";
-import { LayoutDashboardIcon, LogInIcon, LogOutIcon } from "lucide-react";
+import {
+  LanguagesIcon,
+  LayoutDashboardIcon,
+  LogInIcon,
+  LogOutIcon,
+} from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import { createClient } from "@/utils/supabase/client";
 import { logger } from "@/utils/logger/default-logger";
 import { useRouter } from "next/navigation";
+import { useI18NContext } from "@/locales/lib/i18n-context";
+import { useTranslationClient } from "@/locales/lib/useTranslationClient";
 
 export default function AvatarMenu() {
   const [open, setOpen] = useState(false);
@@ -20,7 +27,8 @@ export default function AvatarMenu() {
   const router = useRouter();
   // Posición del menú
   const [menuPosition, setMenuPosition] = useState({ top: 0, left: 0 });
-
+  const { language } = useI18NContext();
+  const { onChangeLang } = useTranslationClient();
   const updateMenuPosition = () => {
     if (buttonRef.current) {
       const rect = buttonRef.current.getBoundingClientRect();
@@ -30,6 +38,7 @@ export default function AvatarMenu() {
       });
     }
   };
+  console.log(language);
 
   useEffect(() => {
     if (open) {
@@ -59,6 +68,11 @@ export default function AvatarMenu() {
   useEffect(() => {
     setMounted(true);
   }, []);
+
+  const changeLanguageHandle = () => {
+    const lng = language == "es" ? "en" : "es";
+    onChangeLang(lng);
+  };
 
   return (
     <>
@@ -112,7 +126,13 @@ export default function AvatarMenu() {
                     <LayoutDashboardIcon size={24} />
                     <span>Administración</span>
                   </Link>
-
+                  <button
+                    onClick={changeLanguageHandle}
+                    className="text-gray-950 px-4 py-2 grid grid-cols-[24px_1fr] items-center gap-2 w-full hover:bg-gray-100 text-left"
+                  >
+                    <LanguagesIcon size={24} />
+                    <span>{language == "es" ? "en" : "es"}</span>
+                  </button>
                   {user ? (
                     <button
                       onClick={handleLogout}

@@ -3,7 +3,11 @@
     "home": "home",
     "projects": "projects",
     "about": "about",
-    "contact": "contact"
+    "contact": "contact",
+    "build": "Build",
+    "awasome": "Awasome",
+    "apps": "Apps",
+    "with": "With"
   },
   "section": {
     "hero": {

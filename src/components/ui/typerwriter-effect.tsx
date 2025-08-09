@@ -158,7 +158,7 @@ className?: string;
         }}
       >
         <div
-          className="md:text-5xl font-medium text-3xl  font-serif tracking-wide antialiased capitalize text-center"
+          className="md:text-5xl font-medium text-2xl sm:text-3xl  font-serif tracking-wide antialiased capitalize text-center"
           style={{
             whiteSpace: "nowrap",
           }}
