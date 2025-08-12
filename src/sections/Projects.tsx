@@ -74,7 +74,7 @@ export const ProjectsSection = async () => {
             key={project.title}
             className="px-8 pt-8 sticky md:py-12 md:px-10 lg:px-20"
           >
-            <div className="lg:grid lg:grid-cols-2 lg:gap-16">
+            <article className="lg:grid lg:grid-cols-2 lg:gap-16">
               <div>
                 <div
                   className="bg-gradient-to-r
@@ -146,7 +146,7 @@ export const ProjectsSection = async () => {
                   alt={`${project.title} mobile version`}
                 />
               </div>
-            </div>
+            </article>
           </Card>
         ))}
       </div>

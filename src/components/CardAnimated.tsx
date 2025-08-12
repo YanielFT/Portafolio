@@ -13,7 +13,7 @@ export const CardAnimated = ({ children, className }: Props) => {
     <motion.div
       initial={{ y: 200 }}
       whileInView={{ x: 0, y: 0 }}
-      viewport={{ amount: 0.2, once: true }}
+      viewport={{ once: true }}
       className={className}
     >
       <Card
