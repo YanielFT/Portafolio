@@ -127,7 +127,7 @@ export const AboutSection = async () => {
                   </g>
                 </g>
               </svg>
-              Download
+              {t("download")}
               <div className="-right-20 -translate-y-11  absolute opacity-0 -bottom-full lg:rounded-md py-2 px-2 bg-black bg-opacity-70  group-hover:opacity-100 transition-opacity shadow-lg">
                 171 kb
               </div>

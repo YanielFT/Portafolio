@@ -13,7 +13,7 @@ export const MapPicture = () => {
     >
       <div className="absolute inset-0 z-50 h-full w-full bg-gray-950/70 [mask-image:linear-gradient(to_bottom,transparent_10%,black_80%)]"></div>
       <span
-        className="absolute text-pretty text-center z-[100] top-70 text-white/90 tracking-wider  antialiased
+        className="absolute text-pretty text-center z-[100] top-65 text-white/90 tracking-wider  antialiased
         font-serif font-normal text-xl sm:text-2xl max-w-[15rem] lg:max-w-[20rem]
         "
       >

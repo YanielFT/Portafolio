@@ -1,6 +1,8 @@
 {
   "message_success": "Message sent successfully",
   "message_faild": "Message failed to send",
+  "download": "Download",
+
   "header": {
     "home": "home",
     "projects": "projects",
@@ -55,7 +57,7 @@
     "close_to_me": {
       "title": "Beyond the code",
       "subtitle": "Explore my story",
-      "content": "Frontend Developer especializado en React JS y Next.js, con enfoque en interfaces escalables, animaciones interactivas y arquitectura modular. Experiencia fullstack con Java (Spring Boot) y CMS headless, liderando proyectos con rendimiento, accesibilidad y automatización CI/CD."
+      "content": "Frontend Developer specialized in React JS and Next.js, focused on scalable interfaces, interactive animations, and modular architecture. Fullstack experience with Java (Spring Boot) and headless CMS, leading projects with performance, accessibility, and CI/CD automation."
     },
     "contact": {
       "title": "Let's create something amazin together",

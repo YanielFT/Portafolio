@@ -1,13 +1,15 @@
 {
-  "message_success": "Mensaje enviado correctamente",
+  "message_success": "Mensaje enviado con éxito",
   "message_faild": "Error al enviar el mensaje",
+  "download": "Descargar",
+
   "header": {
     "home": "Inicio",
     "projects": "Proyectos",
     "about": "Sobre mí",
     "contact": "Contacto",
     "build": "Construir",
-    "awasome": "Asombroso",
+    "awasome": "Genial",
     "apps": "Aplicaciones",
     "with": "Con"
   },
@@ -20,7 +22,7 @@
       "connect": "Conectemos"
     },
     "projects": {
-      "title": "Proyectos del mundo real",
+      "title": "Proyectos reales",
       "second_title": "Proyectos destacados",
       "description": "Me especializo en transformar diseños en aplicaciones web funcionales y de alto rendimiento. Hablemos sobre tu próximo proyecto.",
       "view_project": "Visitar sitio en vivo"
@@ -31,7 +33,7 @@
       "secure": "Seguro",
       "interactive": "Interactivo",
       "Scalable": "Escalable",
-      "frinedly": "Amigable",
+      "frinedly": "Amigable para el usuario",
       "maintainable": "Mantenible",
       "optimized": "Optimizado para buscadores",
       "usable": "Usable",
@@ -39,8 +41,8 @@
       "responsive": "Responsivo"
     },
     "testimonial": {
-      "title": "Clientes felices",
-      "subtitle": "Lo que dicen los clientes",
+      "title": "Clientes satisfechos",
+      "subtitle": "Lo que dicen mis clientes",
       "description": "No te quedes solo con mi palabra. Mira lo que mis clientes opinan sobre mi trabajo."
     },
     "about": {
@@ -50,7 +52,7 @@
       "reads": "Mis lecturas",
       "reads_subtitle": "Explora los libros que moldean mi perspectiva",
       "toolbox": "Mi caja de herramientas",
-      "toolbox_subtitle": "Explora las tecnologías y herramientas que uso para crear experiencias digitales excepcionales."
+      "toolbox_subtitle": "Descubre las tecnologías y herramientas que uso para crear experiencias digitales excepcionales."
     },
     "close_to_me": {
       "title": "Más allá del código",
@@ -64,7 +66,7 @@
       "name": "Nombre",
       "email": "Correo electrónico",
       "message": "Mensaje",
-      "message_placeholder": "Cuéntame qué piensas...",
+      "message_placeholder": "Cuéntame lo que piensas...",
       "error": {
         "name": "El nombre es demasiado corto",
         "email": "Correo electrónico inválido",
