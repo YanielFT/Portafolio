@@ -5,6 +5,7 @@ import { cookieI18Name, fallbackLng, languages } from "@/locales/lang";
 import { UserProvider } from "@/context/UserContext";
 import { getSessionUser } from "@/utils/sessions";
 import { SnackbarProvider } from "@/components/ui/snackbar";
+import Head from "next/head";
 
 acceptLanguage.languages(languages);
 
@@ -19,6 +20,13 @@ export default async function RootLayout({
 
   return (
     <html lang={lng}>
+      <Head>
+        <meta
+          name="google-site-verification"
+          content="C_TFYCjb5j5A71nYzn4b4irMWVczYhuemamNC4A4aZs"
+        />
+      </Head>
+
       <body>
         <UserProvider initialUser={user}>
           <SnackbarProvider>{children}</SnackbarProvider>

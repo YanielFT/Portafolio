@@ -13,10 +13,11 @@ const calistoga = Calistoga({
   variable: "--font-serif",
   weight: ["400"],
 });
-export const metadata: Metadata = {
-  title: "YanielFT Portafolio",
+
+export const metadata = {
+  title: "Portafolio de Yaniel Fuentes",
   description:
-    "A digital space designed to showcase my experience and skills as a frontend developer",
+    "Frontend Developer especializado en React, Next.js, SSR y diseño modular.",
 };
 
 export default function Layout({
@@ -32,7 +33,7 @@ export default function Layout({
       className={twMerge(
         inter.variable,
         calistoga.variable,
-        "bg-gray-900 text-white antialiased font-sans"
+        "bg-gray-900 text-white antialiased font-sans",
       )}
     >
       <I18NProvider lng={lng}>{children}</I18NProvider>
