@@ -38,7 +38,6 @@ export default function AvatarMenu() {
       });
     }
   };
-  console.log(language);
 
   useEffect(() => {
     if (open) {
@@ -154,7 +153,7 @@ export default function AvatarMenu() {
               </>
             )}
           </AnimatePresence>,
-          document.body
+          document.body,
         )}
     </>
   );
