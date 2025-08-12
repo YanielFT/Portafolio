@@ -2,19 +2,20 @@ import { useTranslationServer } from "@/locales/lib/useTranslationServer";
 import { SectionHeader } from "../components/SectionHeader";
 import { AboutCard } from "../components/AboutCard";
 
-import RedImage from "@/assets/images/redes.svg";
 import { MapPicture } from "@/components/MapPicture";
 import { ToolBox } from "../components/Toolbox";
 import SpiderChart from "@/components/landing/SpiderChart";
 import { CardAnimated } from "@/components/CardAnimated";
 import { Card } from "@/components/Card";
 import Image from "next/image";
+import Link from "next/link";
+import { Github, Linkedin } from "lucide-react";
 
 export const AboutSection = async () => {
   const { t } = await useTranslationServer();
 
   return (
-    <section id="about" className="pb-32 container mx-auto ">
+    <section id="about" className="pb-16 container mx-auto ">
       <SectionHeader
         subtitle={t("section.about.subtitle")}
         title={t("section.about.title")}
@@ -35,7 +36,7 @@ export const AboutSection = async () => {
           description={t("section.close_to_me.subtitle")}
         >
           <div className="mt-4 flex items-center justify-center h-full w-full">
-            <p className="text-sm sm:text-base text-balance text-white/60">
+            <p className="text-sm text-pretty text-white/60">
               {t("section.close_to_me.content")}
             </p>
           </div>
@@ -50,15 +51,34 @@ export const AboutSection = async () => {
 
         {/* 🟩 Primer columna con dos elementos apilados */}
         <div className="max-h-[23rem] w-full sm:w-[344px] md:w-full mx-auto md:col-span-2 md:row-span-2 flex flex-col sm:gap-8 gap-12">
-          <Card className="relative h-auto w-full">
-            <div className="relative w-full h-48">
+          <Card className="relative h-48 w-full">
+            <div className="absolute inset-0 w-full  flex ml-18 mt-2">
               <Image
-                className="w-full h-38 object-fill opacity-80"
+                className="w-full object-fill object-right opacity-80"
                 src="/assets/redes.svg"
                 width={400}
                 height={300}
                 alt="asdsd"
+                style={{ float: "right" }}
               />
+            </div>
+            <div className=" flex flex-col h-full gap-4 items-center justify-center float-left ml-10">
+              <Link
+                href="https://github.com/YanielFT"
+                className="hover:scale-110 transition duration-300 ease-in-out rounded-full bg-gray-600/80 border border-gray-600 w-10 h-10 flex items-center justify-center"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Github />
+              </Link>
+              <Link
+                href="https://www.linkedin.com/in/yaniel-fuentes-tedes-6bb705253"
+                className="hover:scale-110 transition duration-300 ease-in-out rounded-full bg-gray-600/80 border border-gray-600 w-10 h-10 flex items-center justify-center"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Linkedin />
+              </Link>
             </div>
           </Card>
 

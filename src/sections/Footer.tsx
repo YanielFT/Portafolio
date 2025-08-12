@@ -1,15 +1,15 @@
 import { useTranslationServer } from "@/locales/lib/useTranslationServer";
-import { Facebook, Github, Instagram, Linkedin } from "lucide-react";
+import { Github, Linkedin } from "lucide-react";
 
 const footerLinks = [
   {
     titile: "LinkedIn",
-    href: "",
+    href: "https://www.linkedin.com/in/yaniel-fuentes-tedes-6bb705253/",
     icon: <Linkedin size={16} />,
   },
   {
     titile: "GitHub",
-    href: "",
+    href: "https://github.com/YanielFT",
     icon: <Github size={16} />,
   },
 ];
