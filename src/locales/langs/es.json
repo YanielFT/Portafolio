@@ -1,12 +1,14 @@
 {
+  "message_success": "Mensaje enviado correctamente",
+  "message_faild": "Error al enviar el mensaje",
   "header": {
-    "home": "inicio",
-    "projects": "proyectos",
-    "about": "sobre mí",
-    "contact": "contacto",
-    "build": "Desarrollar",
-    "awasome": "Geniales",
-    "apps": "Apps",
+    "home": "Inicio",
+    "projects": "Proyectos",
+    "about": "Sobre mí",
+    "contact": "Contacto",
+    "build": "Construir",
+    "awasome": "Asombroso",
+    "apps": "Aplicaciones",
     "with": "Con"
   },
   "section": {
@@ -29,7 +31,7 @@
       "secure": "Seguro",
       "interactive": "Interactivo",
       "Scalable": "Escalable",
-      "frinedly": "Amigable para el usuario",
+      "frinedly": "Amigable",
       "maintainable": "Mantenible",
       "optimized": "Optimizado para buscadores",
       "usable": "Usable",
@@ -38,7 +40,7 @@
     },
     "testimonial": {
       "title": "Clientes felices",
-      "subtitle": "Lo que dicen los clientes sobre mí",
+      "subtitle": "Lo que dicen los clientes",
       "description": "No te quedes solo con mi palabra. Mira lo que mis clientes opinan sobre mi trabajo."
     },
     "about": {
@@ -58,7 +60,16 @@
     "contact": {
       "title": "Creemos algo increíble juntos",
       "subtitle": "¿Listo para dar vida a tu próximo proyecto? Conectemos y hablemos sobre cómo puedo ayudarte a alcanzar tus objetivos.",
-      "contact_me": "Contáctame"
+      "contact_me": "Contáctame",
+      "name": "Nombre",
+      "email": "Correo electrónico",
+      "message": "Mensaje",
+      "message_placeholder": "Cuéntame qué piensas...",
+      "error": {
+        "name": "El nombre es demasiado corto",
+        "email": "Correo electrónico inválido",
+        "message": "El mensaje es demasiado corto"
+      }
     }
   },
   "footer": {

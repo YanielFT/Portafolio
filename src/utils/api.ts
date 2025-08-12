@@ -1,4 +1,8 @@
-import { ApiResponse, SupabaseInsertResponse } from "@/types/api";
+import {
+  ApiResponse,
+  ResendResponse,
+  SupabaseInsertResponse,
+} from "@/types/api";
 import { clearSupabaseSession } from "./sessions";
 import { logger } from "./logger/default-logger";
 import { AuthResponse } from "@supabase/supabase-js";
@@ -60,5 +64,26 @@ export const handleSupabaseError = <T>(
     error: false,
     status: 200,
     data: response.data as T,
+  };
+};
+
+export const handleResendError = (
+  response: ResendResponse
+): ApiResponse<{ id: string }> => {
+  if (response.error) {
+    logger.error(response.error.message, "handleResendError");
+
+    return {
+      error: true,
+      title: "Email Delivery Error",
+      status: 500,
+      detail: response.error.message,
+    };
+  }
+
+  return {
+    error: false,
+    status: 200,
+    data: { id: response.data!.id },
   };
 };

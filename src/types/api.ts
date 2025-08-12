@@ -45,3 +45,9 @@ export type SupabaseInsertResponse = {
   status: number;
   statusText: string;
 };
+
+export type ResendResponse = {
+  data: { id: string } | null;
+  error: { message: string; name: string } | null;
+};
+

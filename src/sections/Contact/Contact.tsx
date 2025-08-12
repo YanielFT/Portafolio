@@ -24,7 +24,7 @@ export const ContactSection = async () => {
             <h2 className="font-serif text-2xl md:text-3xl">
               {t("section.contact.title")}
             </h2>
-            <p className="font-normal text-sm mt-5 md:text-base">
+            <p className="font-normal text-sm mt-5 md:text-base max-w-xl">
               {t("section.contact.subtitle")}
             </p>
           </div>

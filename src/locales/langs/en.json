@@ -1,4 +1,6 @@
 {
+  "message_success": "Message sent successfully",
+  "message_faild": "Message failed to send",
   "header": {
     "home": "home",
     "projects": "projects",
@@ -58,7 +60,16 @@
     "contact": {
       "title": "Let's create something amazin together",
       "subtitle": "Ready to bring your next project to life? Let's connect and discuss how I can help upu achieve yuor goals.",
-      "contact_me": "Contact me"
+      "contact_me": "Contact me",
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "message_placeholder": "Let me know what you think...",
+      "error": {
+        "name": "Name is too short",
+        "email": "Invalid email",
+        "message": "Message is too short"
+      }
     }
   },
   "footer": {

@@ -8,18 +8,17 @@ import { useTranslationClient } from "@/locales/lib/useTranslationClient";
 import { createClient } from "@/utils/supabase/client";
 import { enqueueSnackbar } from "notistack";
 import { logger } from "@/utils/logger/default-logger";
-
-const contactSchema = z.object({
-  name: z.string().min(2, "Name is too short"),
-  email: z.string().email("Invalid email"),
-  message: z.string().min(5, "Message is too short"),
-});
-
-type ContactFormData = z.infer<typeof contactSchema>;
+import { sendEmail } from "@/services/email";
 
 export const ContactForm = () => {
   const { t } = useTranslationClient();
   const supabse = createClient();
+  type ContactFormData = z.infer<typeof contactSchema>;
+  const contactSchema = z.object({
+    name: z.string().min(2, t("section.contact.error.name")),
+    email: z.string().email(t("section.contact.error.email")),
+    message: z.string().min(5, t("section.contact.error.message")),
+  });
   const {
     register,
     handleSubmit,
@@ -39,13 +38,20 @@ export const ContactForm = () => {
 
       if (!error) {
         reset();
-        enqueueSnackbar({
-          message: "Mensaje enviado",
-          variant: "success",
+        const { error } = await sendEmail({
+          name: data.name,
+          email: data.email,
+          message: data.message,
         });
+
+        if (!error)
+          enqueueSnackbar({
+            message: t("message_success"),
+            variant: "success",
+          });
       } else {
         enqueueSnackbar({
-          message: "Mensaje no enviado",
+          message: t("message_faild"),
           variant: "error",
         });
       }
@@ -64,7 +70,7 @@ export const ContactForm = () => {
           htmlFor="name"
           className="block mb-2 text-sm font-medium text-gray-900"
         >
-          Name
+          {t("section.contact.name")}
         </label>
         <input
           type="text"
@@ -83,7 +89,7 @@ export const ContactForm = () => {
           htmlFor="email"
           className="block mb-2 text-sm font-medium text-gray-900"
         >
-          Email
+          {t("section.contact.email")}
         </label>
         <input
           type="email"
@@ -100,16 +106,16 @@ export const ContactForm = () => {
       <div>
         <label
           htmlFor="message"
-          className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+          className="block mb-2 text-sm font-medium text-gray-900"
         >
-          Your message
+          {t("section.contact.message")}
         </label>
         <textarea
           id="message"
           rows={4}
           {...register("message")}
           className="bg-gray-600/40 border border-gray-600 text-gray-900 text-sm rounded-lg block w-full p-2.5 focus:outline-none transition"
-          placeholder="Write your thoughts here..."
+          placeholder={t("section.contact.message_placeholder")}
         />
         {errors.message && (
           <p className="text-red-900 mt-2 text-sm">{errors.message.message}</p>
