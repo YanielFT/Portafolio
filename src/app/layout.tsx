@@ -6,6 +6,7 @@ import { UserProvider } from "@/context/UserContext";
 import { getSessionUser } from "@/utils/sessions";
 import { SnackbarProvider } from "@/components/ui/snackbar";
 import Head from "next/head";
+import { GoogleAnalytics } from "@/components/analytics/GoogleAnalytics";
 
 acceptLanguage.languages(languages);
 
@@ -28,6 +29,8 @@ export default async function RootLayout({
       </Head>
 
       <body>
+        <GoogleAnalytics />
+
         <UserProvider initialUser={user}>
           <SnackbarProvider>{children}</SnackbarProvider>
         </UserProvider>

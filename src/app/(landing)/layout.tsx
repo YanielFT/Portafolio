@@ -18,6 +18,10 @@ export const metadata = {
   title: "Portafolio de Yaniel Fuentes",
   description:
     "Frontend Developer especializado en React, Next.js, SSR y diseño modular.",
+  authors: [{ name: "Yaniel Fuentes Tedes" }],
+  creator: "Yaniel Fuentes Tedes",
+  publisher: "YanielFT",
+  metadataBase: new URL("https://yanielft.vercel.app"),
 };
 
 export default function Layout({
