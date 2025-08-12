@@ -1,5 +1,5 @@
 import { useTranslationServer } from "@/locales/lib/useTranslationServer";
-import grainImage from "@/assets/images/grain.jpg";
+import grainImage from "@/assets/images/grain.webp";
 import { ContactForm } from "./Form/ContactForm";
 export const ContactSection = async () => {
   const { t } = await useTranslationServer();

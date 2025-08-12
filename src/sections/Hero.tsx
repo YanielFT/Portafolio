@@ -2,7 +2,7 @@ import memojiImage from "@/assets/images/memoji-computer.png";
 import { useTranslationServer } from "@/locales/lib/useTranslationServer";
 import Image from "next/image";
 import ArrowDown from "@/assets/icons/arrow-down.svg";
-import grainImage from "@/assets/images/grain.jpg";
+import grainImage from "@/assets/images/grain.webp";
 import StarIcon from "@/assets/icons/star.svg";
 import { HeroOrbit } from "../components/HeroOrbit";
 import { TypewriterEffectSmooth } from "@/components/ui/typerwriter-effect";

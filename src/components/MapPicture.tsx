@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import mapImage from "@/assets/images/map.jpg";
+import mapImage from "@/assets/images/map.webp";
 import SmileMemojicon from "@/assets/images/memoji-smile.png";
 import { CardAnimated } from "./CardAnimated";
 
