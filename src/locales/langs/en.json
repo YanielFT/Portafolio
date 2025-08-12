@@ -17,14 +17,14 @@
     "hero": {
       "status": "Available for new projects",
       "title": "Building exceptional user experiences",
-      "description": "I especialize in transforming desings into functional, high-performing web applications. Let's discuss your next project.",
+      "description": "I especialize in transforming designs into functional, high-performing web applications. Let's discuss your next project.",
       "link_my_work": "Exporle my work",
       "connect": "Let's connect"
     },
     "projects": {
       "title": "Real-World Projects",
       "second_title": "Featured projects",
-      "description": "I especialize in transforming desings into functional, high-performing web applications. Let's discuss your next project.",
+      "description": "I especialize in transforming designs into functional, high-performing web applications. Let's discuss your next project.",
       "view_project": "Visit Live Site"
     },
     "tape": {
@@ -61,7 +61,7 @@
     },
     "contact": {
       "title": "Let's create something amazin together",
-      "subtitle": "Ready to bring your next project to life? Let's connect and discuss how I can help upu achieve yuor goals.",
+      "subtitle": "Ready to bring your next project to life? Let's connect and discuss how I can help you achieve your goals.",
       "contact_me": "Contact me",
       "name": "Name",
       "email": "Email",
