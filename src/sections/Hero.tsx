@@ -111,7 +111,7 @@ export const HeroSection = async () => {
         >
           <span className="capitalize font-semibold">
             {t("section.hero.link_my_work")}
-          </span>``
+          </span>
           <ArrowDown className="size-4" />
         </a>
         <a 
