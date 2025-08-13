@@ -15,6 +15,11 @@ export const CardAnimated = ({ children, className }: Props) => {
       whileInView={{ x: 0, y: 0 }}
       viewport={{ once: true }}
       className={className}
+      transition={{
+        type: "spring",
+        stiffness: 500,
+        damping: 30,
+      }}
     >
       <Card
         className="relative w-full z-0 sm:w-[344px] md:w-full md:col-span-2  

@@ -32,6 +32,11 @@ export const AboutCard: React.FC<SectionHeaderProps> = ({
       whileInView={{ x: 0, y: 0 }}
       viewport={{ once: true }}
       className={className}
+      transition={{
+        type: "spring",
+        stiffness: 500,
+        damping: 30,
+      }}
     >
       <Card className={twMerge("py-8 px-5", className)}>
         <div>

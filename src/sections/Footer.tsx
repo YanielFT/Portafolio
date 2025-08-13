@@ -20,6 +20,7 @@ export const Footer = async () => {
     <footer>
       <div
         className="
+        sm:px-10
       overflow-x-clip sm:justify-between 
       relative z-10 flex-col gap-8 sm:flex-row flex items-center justify-center mx-auto"
       >
