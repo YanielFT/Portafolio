@@ -96,7 +96,7 @@ export const HeroSection = async () => {
             </small>
           </div>
         </div>
-        <div className="max-w-xl mx-auto my-4">
+        <div className="max-w-xl lg:max-w-3xl mx-auto my-4">
           <TypewriterEffectSmooth words={words} />
           <TypewriterEffectSmooth words={words2} delay={3} />
           <p className="md:text-lg text-center text-pretty mt-4 text-white/60">
@@ -111,7 +111,7 @@ export const HeroSection = async () => {
         >
           <span className="capitalize font-semibold">
             {t("section.hero.link_my_work")}
-          </span>
+          </span>``
           <ArrowDown className="size-4" />
         </a>
         <a 

@@ -122,7 +122,7 @@ export const ToolBox = () => {
       title={t("section.about.toolbox")}
       description={t("section.about.toolbox_subtitle")}
     >
-      <div className="relative lg:justify-start w-full h-full flex flex-wrap gap-4 justify-center items-center lg:items- mt-5 lg:mt-10">
+      <div className="relative lg:justify-start w-full h-full flex flex-wrap gap-4 lg:gap-y-0 justify-center items-center lg:items- mt-5 lg:mt-10">
         {toolboxItems.map((h) => (
           <div
             key={h.title}
